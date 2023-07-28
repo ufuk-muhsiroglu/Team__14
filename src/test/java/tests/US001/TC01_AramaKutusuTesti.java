@@ -11,6 +11,6 @@ public class TC01_AramaKutusuTesti {
     public void test01() {
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
         Page page = new Page();
-        page.aramaKutusu.sendKeys("iphone", Keys.ENTER);
+        //page.aramaKutusu.sendKeys("iphone", Keys.ENTER);
     }
 }

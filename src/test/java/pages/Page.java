@@ -11,7 +11,7 @@ public class Page {
     }
 
 
-    //Beyza Çolak 14-54 satır arası
+    //Beyza Çolak 14-64 satır arası
 
 
 
@@ -52,7 +52,6 @@ public class Page {
 
 
 
-    // Fatma Banu Güler 55-99 arası
 
 
 
@@ -62,6 +61,7 @@ public class Page {
 
 
 
+// Fatma Banu Güler 64-114 arası
 
 
 
@@ -97,7 +97,6 @@ public class Page {
 
 
 
-// Mustafa Çelik 100-145 arası
 
 
 
@@ -112,6 +111,7 @@ public class Page {
 
 
 
+      // Mustafa Çelik 114-164 arası
 
 
 
@@ -143,7 +143,6 @@ public class Page {
 
 
 
-    // Gönül Obuz 146-191 arası
 
 
 
@@ -162,6 +161,7 @@ public class Page {
 
 
 
+      // Gönül Obuz 164-214 arası
 
 
 
@@ -189,7 +189,6 @@ public class Page {
 
 
 
-    // Ali İsaoğlu 192-237 arası
 
 
 
@@ -212,6 +211,7 @@ public class Page {
 
 
 
+      // Ali İsaoğlu 214-264 arası
 
 
 
@@ -235,7 +235,6 @@ public class Page {
 
 
 
-    // Ahmet Bedir 238-283 arası
 
 
 
@@ -262,6 +261,7 @@ public class Page {
 
 
 
+    // Ahmet Bedir 264-314 arası
 
 
 
@@ -281,7 +281,6 @@ public class Page {
 
 
 
-    // Bergüzar Zeynep Ölmez 284-329 arası
 
 
 
@@ -312,6 +311,7 @@ public class Page {
 
 
 
+    // Bergüzar Zeynep Ölmez 314-364 arası
 
 
 
@@ -327,7 +327,6 @@ public class Page {
 
 
 
-    //Rümeysa Olgun 330-375 arası
 
 
 
@@ -362,6 +361,7 @@ public class Page {
 
 
 
+    //Rümeysa Olgun 364-414 arası
 
 
 
@@ -373,7 +373,6 @@ public class Page {
 
 
 
-    // Yasemin Eric 376-421 arası
 
 
 
@@ -412,6 +411,7 @@ public class Page {
 
 
 
+    // Yasemin Eric 414-464 arası
 
 
 
@@ -419,7 +419,6 @@ public class Page {
 
 
 
-    // Ufuk Muhsiroğlu 422-467 arası
 
 
 
@@ -434,6 +433,35 @@ public class Page {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Ufuk Muhsiroğlu 464-514 arası
 
 
 
