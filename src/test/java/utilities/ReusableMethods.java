@@ -191,4 +191,11 @@ public class ReusableMethods {
         page.signInButton.click();
     }
 
+    //JS GetAttributeValue with Return
+    public static String getValueByJSR(String id, String attributeName) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        return (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
+
+    }
+
 }
