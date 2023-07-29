@@ -61,7 +61,7 @@ public class Page {
 
 
 
-// Fatma Banu Güler 64-114 arası
+    // Fatma Banu Güler 64-114 arası
 
 
 
@@ -111,7 +111,7 @@ public class Page {
 
 
 
-      // Mustafa Çelik 114-164 arası
+// Mustafa Çelik 114-164 arası
 
 
 
@@ -161,7 +161,7 @@ public class Page {
 
 
 
-      // Gönül Obuz 164-214 arası
+    // Gönül Obuz 164-214 arası
 
 
 
@@ -211,7 +211,7 @@ public class Page {
 
 
 
-      // Ali İsaoğlu 214-264 arası
+    // Ali İsaoğlu 214-264 arası
 
 
 
@@ -262,23 +262,6 @@ public class Page {
 
 
     // Ahmet Bedir 264-314 arası
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Ahmet Bedir 238-283 arası
     @FindBy(xpath = "//*[@class='login inline-type']")
     public WebElement homePageSignIn;
     @FindBy(xpath = "(//input)[1]")
@@ -315,8 +298,6 @@ public class Page {
     public WebElement billingEmail;
     @FindBy(xpath = "//*[@id=\"main\"]/div/div/div/div/div/div/div/form/div/p/button")
     public WebElement saveBillingAddress;
-
-
 
 
 
@@ -481,6 +462,46 @@ public class Page {
 
 
     // Ufuk Muhsiroğlu 464-514 arası
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
