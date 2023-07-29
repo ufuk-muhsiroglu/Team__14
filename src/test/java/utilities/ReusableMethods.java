@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.Page;
 
 import java.io.File;
 import java.io.IOException;
@@ -179,4 +180,15 @@ public class ReusableMethods {
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
+
+    public static void signInMethod(String email, String password) {
+        Driver.getDriver().get("https://www.allovercommerce.com/");
+        Page page = new Page();
+        page.homePageSignIn.click();
+        ReusableMethods.bekle(3);
+        page.signUsername.sendKeys(email);
+        page.signPassword.sendKeys(password);
+        page.signInButton.click();
+    }
+
 }
