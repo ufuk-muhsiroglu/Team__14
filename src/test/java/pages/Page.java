@@ -274,10 +274,8 @@ public class Page {
     public WebElement signOutButton;
     @FindBy(xpath = "(//ul)[3]")
     public WebElement dashboard;
-
     @FindBy(xpath = "(//*[@class='submit-status'])[1]")
     public WebElement invalidMailError;
-
     @FindBy(xpath = "(//ul/li)[9]")
     public WebElement addressesButton;
     @FindBy(xpath = "(//div/a)[13]")
@@ -298,12 +296,14 @@ public class Page {
     public WebElement billingEmail;
     @FindBy(xpath = "//*[@id=\"main\"]/div/div/div/div/div/div/div/form/div/p/button")
     public WebElement saveBillingAddress;
-
-
-
-
-
-
+    @FindBy(xpath = "(//div/a)[13]")
+    public WebElement checkAddAddress;
+    @FindBy(xpath = "//*[@data-id='billing_first_name']")
+    public WebElement alertName;
+    @FindBy(xpath = "(//*[@type='text'])[2]")
+    public WebElement billingLastname;
+    @FindBy(xpath = "//*[@data-id='billing_last_name']")
+    public WebElement alertSurname;
 
 
 
