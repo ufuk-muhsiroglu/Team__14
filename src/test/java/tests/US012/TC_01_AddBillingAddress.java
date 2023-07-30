@@ -1,27 +1,18 @@
 package tests.US012;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Page;
 import utilities.ConfigReader;
-import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class TC01 {
+public class TC_01_AddBillingAddress {
     @Test
     public void test01() {
-        //Go to homepage
-        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
+        //Go to homepage and sign in Vendor account
         Page page =new Page();
-        //Sign in User account
-        page.homePageSignIn.click();
-        ReusableMethods.bekle(2);
-        page.signUsername.sendKeys(ConfigReader.getProperty("sabitEmail"));
-        page.signPassword.sendKeys(ConfigReader.getProperty("sabitPassword"));
-        page.signInButton.click();
+        ReusableMethods.signInMethod(ConfigReader.getProperty("sabitEmail"),ConfigReader.getProperty("sabitPassword"));
         ReusableMethods.visibleWait(page.signOutButton,10);
         page.signOutButton.click();
 
@@ -31,7 +22,7 @@ public class TC01 {
         //Click add billing button
         page.billingAdd.click();
 
-        //Fill all field
+        //Fill all required fields
         page.billingName.sendKeys(ConfigReader.getProperty("addresseName"), Keys.TAB,ConfigReader.getProperty("addresseLastName"));
         ReusableMethods.ddmValue(page.billingCountry,"DE");
         page.billingStreet.sendKeys(ConfigReader.getProperty("addresseStreet"));
@@ -39,12 +30,17 @@ public class TC01 {
         page.billingTown.sendKeys(ConfigReader.getProperty("addresseTown"));
         page.billingPhone.sendKeys(ConfigReader.getProperty("billingPhone"));
 
-        //Check the email is already exist
+        //Check Vendor's email is there
         Assert.assertEquals(page.billingEmail.getAttribute("value"),ConfigReader.getProperty("sabitEmail"));
         ReusableMethods.bekle(2);
+
         //Click the Save Address button
-        WebElement element = page.saveBillingAddress;
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].click();", element);
+        ReusableMethods.click(page.saveBillingAddress);
+        ReusableMethods.visibleWait(page.checkAddAddress, 10);
+
+        //Check the address has been added
+        ReusableMethods.scroll(page.checkAddAddress);
+        Assert.assertEquals(page.checkAddAddress.getText(),"EDIT YOUR BILLING ADDRESS");
+
     }
 }
