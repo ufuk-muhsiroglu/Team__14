@@ -1,5 +1,6 @@
 package utilities;
 
+import com.github.javafaker.Faker;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -198,4 +199,16 @@ public class ReusableMethods {
 
     }
 
+    //RegisterMethod
+    public static void registerMethod(String username,String email,String password){
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        Page page = new Page();
+        page.registerButton.click();
+        Faker faker = new Faker();
+        page.usernameArea.sendKeys(username);
+        page.emailArea.sendKeys(email);
+        page.passwordArea.sendKeys(password);
+        page.agreeButton.click();
+        page.signUpButton.click();
+    }
 }
