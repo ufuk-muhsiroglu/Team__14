@@ -41,6 +41,5 @@ public class TC_01_AddBillingAddress {
         //Check the address has been added
         ReusableMethods.scroll(page.checkAddAddress);
         Assert.assertEquals(page.checkAddAddress.getText(),"EDIT YOUR BILLING ADDRESS");
-
     }
 }
