@@ -11,7 +11,17 @@ public class Page {
     }
 
 
-    //Beyza Çolak 14-64 satır arası
+
+
+
+
+
+
+
+
+
+
+    //Beyza Çolak 24-64 satır arası
     @FindBy(xpath = "//a[@class='register inline-type']")
     public WebElement registerButton;
     @FindBy(xpath = "//input[@id='reg_username']")
@@ -26,16 +36,6 @@ public class Page {
     public WebElement signUpButton;
     @FindBy(xpath = "(//p[@class='submit-status'])[2]")
     public WebElement alreadyRegisteredMessage;
-
-
-
-
-
-
-
-
-
-
 
 
 
