@@ -211,4 +211,16 @@ public class ReusableMethods {
         page.agreeButton.click();
         page.signUpButton.click();
     }
+
+    //Tüm Sayfa ScreenShot
+    public static void tumSayfaResmi(String userStoryNumber,String pageName) {
+        String tarih = new SimpleDateFormat("hh_mm_ss_ddMMyyyy").format(new Date());
+        String dosyaYolu = "reportsandimages/images/us_"+userStoryNumber+"_images/webpage/" +tarih+"_"+pageName+ ".png";
+        TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+        try {
+            FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE), new File(dosyaYolu));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

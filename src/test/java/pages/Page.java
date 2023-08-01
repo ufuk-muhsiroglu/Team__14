@@ -64,54 +64,54 @@ public class Page {
     // Fatma Banu Güler 64-114 arası
 
 
+    @FindBy(xpath = "//*[text()='Sign In']") public WebElement signIn;
+    @FindBy(xpath = "//*[@id='username']") public WebElement userName;
+    @FindBy(xpath = "//*[@id='menu-item-1079']") public WebElement myAccountButton;
+    @FindBy(xpath = "//a[text()='Addresses']") public WebElement addressesButton1;
+    @FindBy(xpath = "(//h3)[1]") public WebElement billingAddressWriting;
+    @FindBy(xpath= "(//*[@class='edit btn btn-link btn-primary btn-underline mb-4'])[1]") public WebElement billingAddButton;
+    @FindBy(xpath="//*[@name='billing_first_name']") public WebElement billingFirstName;
+    @FindBy(xpath="//*[@name='billing_last_name']") public WebElement billingLastName;
+    @FindBy(xpath= "(//select)[1]") public WebElement billingCountrySelect;
+    @FindBy(xpath="//*[@name='billing_address_1']") public WebElement billingStreet1;
+    @FindBy(xpath ="//*[@name='billing_city']") public WebElement billingCityTown;
+    @FindBy(xpath= "(//select)[2]") public WebElement billingStateSelect;
+    @FindBy(xpath = "//*[@name='billing_postcode']") public WebElement billingPostCode;
+    @FindBy(xpath= "//*[@name='billing_phone']") public WebElement billingPhone1;
+    @FindBy(xpath= "//*[@name='billing_email']") public WebElement billingEmail1;
+    @FindBy(xpath= "//*[@name='save_address']") public WebElement billingSubmit;
+    @FindBy(xpath= "//*[text()='Address changed successfully.']") public WebElement billingAllert;
+    @FindBy(xpath= "//*[@data-id='billing_first_name']") public WebElement billingFirstNameAllert;
+    @FindBy(xpath= "//*[@data-id='billing_last_name']") public WebElement billingLastNameAllert;
+    @FindBy(xpath= "//*[@data-id='billing_address_1']") public WebElement billingStreetAddressAllert;
+    @FindBy(xpath= "//*[@data-id='billing_city']") public WebElement billingCityAdressAllert;
+    @FindBy(xpath= "//*[@data-id='billing_postcode']") public WebElement billingPostcodeAllert;
+    @FindBy(xpath= "//*[text()='Phone is a required field.']") public WebElement billingPhoneAllert;
+    @FindBy(xpath= "//*[text()=' is not a valid phone number.']") public WebElement billingPhoneInValidAllert;
+    @FindBy(xpath= "//*[@class='edit btn btn-link btn-primary btn-underline mb-4']") public WebElement editBillingAddress;
 
 
 
+    @FindBy(xpath= "(//*[@class='edit btn btn-link btn-primary btn-underline mb-4'])[2]") public WebElement shippingAddButton;
+    @FindBy(xpath= "(//*[@class='edit btn btn-link btn-primary btn-underline mb-4'])[2]") public WebElement editShippingAddress;
+    @FindBy(xpath= "//*[@name='shipping_first_name']") public WebElement shippingFirstName;
+    @FindBy(xpath= "//*[@name='shipping_last_name']") public WebElement shippingLastName;
+    @FindBy(xpath= "//*[@name='shipping_address_1']") public WebElement shippingStreetBox;
+    @FindBy(xpath= "//*[@name='shipping_city']") public WebElement shippingTownBox;
+    @FindBy(xpath= "//*[@name='shipping_postcode']") public WebElement shippingZipCode;
+    @FindBy(xpath= "(//select)[1]") public WebElement shippingCountrySelect;
+    @FindBy(xpath= "(//select)[2]") public WebElement shippingStateSelect;
+    @FindBy(xpath= "//*[@name='save_address']") public WebElement shippingSubmit;
+    @FindBy(xpath= "//*[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']") public WebElement shippingAlert;
+    @FindBy(xpath= "//*[@data-id='shipping_first_name']") public WebElement shippingFirstNameAllert;
+    @FindBy(xpath= "//*[@data-id='shipping_last_name']") public WebElement shippingLastNameAllert;
+    @FindBy(xpath= "//*[@data-id='shipping_address_1']") public WebElement shippingAddressAllert;
+    @FindBy(xpath= "//*[@data-id='shipping_city']") public WebElement shippingCityAdressAllert;
+    @FindBy(xpath= "//*[@data-id='shipping_postcode']") public WebElement shippingPostcodeAllert;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Mustafa Çelik 114-164 arası
+    // Mustafa Çelik 114-164 arası
 
 
 
