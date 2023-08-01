@@ -43,6 +43,6 @@ public class TC_03_NegativeTestSurname {
         ReusableMethods.click(page.saveBillingAddress);
 
         //Check the alert message
-        Assert.assertTrue(page.alertSurname.isDisplayed());
+        Assert.assertEquals(page.alertBillingAddress.getText(),"Last name is a required field.");
     }
 }

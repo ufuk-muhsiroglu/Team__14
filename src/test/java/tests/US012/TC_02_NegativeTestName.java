@@ -43,6 +43,6 @@ public class TC_02_NegativeTestName {
         ReusableMethods.click(page.saveBillingAddress);
 
         //Check the alert message
-        Assert.assertTrue(page.alertName.isDisplayed());
+        Assert.assertEquals(page.alertBillingAddress.getText(),"First name is a required field.");
     }
 }

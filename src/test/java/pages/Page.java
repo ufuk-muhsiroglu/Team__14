@@ -276,34 +276,34 @@ public class Page {
     public WebElement dashboard;
     @FindBy(xpath = "(//*[@class='submit-status'])[1]")
     public WebElement invalidMailError;
-    @FindBy(xpath = "(//ul/li)[9]")
+    @FindBy(linkText = "Addresses")
     public WebElement addressesButton;
-    @FindBy(xpath = "(//div/a)[13]")
+    @FindBy(xpath = "//a[contains(@class,'edit btn')]")
     public WebElement billingAdd;
     @FindBy(xpath = "//*[@id='billing_first_name']")
     public WebElement billingName;
     @FindBy(xpath = "//*[@id='billing_country']")
     public WebElement billingCountry;
-    @FindBy (xpath = "(//*[@type='text'])[4]")
+    @FindBy (id = "billing_address_1")
     public WebElement billingStreet;
-    @FindBy(xpath = "(//*[@type='text'])[6]")
+    @FindBy(xpath = "//input[@name='billing_postcode']")
     public WebElement billingZIP;
+    @FindBy(id = "billing_state")
+    public WebElement billingState;
     @FindBy(xpath = "//*[@id='billing_city']")
     public WebElement billingTown;
     @FindBy(xpath = "//*[@type='tel']")
     public WebElement billingPhone;
-    @FindBy(xpath = "(//*[@class='input-text '])[9]")
+    @FindBy(id = "billing_email")
     public WebElement billingEmail;
-    @FindBy(xpath = "//*[@id=\"main\"]/div/div/div/div/div/div/div/form/div/p/button")
+    @FindBy(xpath = "//button[@value='Save address']")
     public WebElement saveBillingAddress;
-    @FindBy(xpath = "(//div/a)[13]")
+    @FindBy(xpath = "//div[@class='woocommerce-Address']//a")
     public WebElement checkAddAddress;
-    @FindBy(xpath = "//*[@data-id='billing_first_name']")
-    public WebElement alertName;
     @FindBy(xpath = "(//*[@type='text'])[2]")
     public WebElement billingLastname;
-    @FindBy(xpath = "//*[@data-id='billing_last_name']")
-    public WebElement alertSurname;
+    @FindBy(xpath = "//*[@role='alert']")
+    public WebElement alertBillingAddress;
 
 
 

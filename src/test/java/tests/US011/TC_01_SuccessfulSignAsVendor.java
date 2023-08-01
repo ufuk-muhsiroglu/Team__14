@@ -19,7 +19,7 @@ public class TC_01_SuccessfulSignAsVendor {
         ReusableMethods.signInMethod(ConfigReader.getProperty("sabitEmail"),ConfigReader.getProperty("sabitPassword"));
 
         //Control the Store manager, orders, downloads, addresses , account details,
-        // wishlist, Support tickets, followings and  log out buttons is displyed
+        // wishlist, Support tickets, followings and  log out buttons is displayed
         ReusableMethods.visibleWait(page.signOutButton,10);
         page.signOutButton.click();
         Assert.assertEquals(page.dashboard.getText(),"Dashboard\n" +

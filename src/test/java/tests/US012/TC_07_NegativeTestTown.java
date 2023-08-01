@@ -6,9 +6,9 @@ import pages.Page;
 import utilities.ConfigReader;
 import utilities.ReusableMethods;
 
-public class TC_04_NegativeTestCountry {
+public class TC_07_NegativeTestTown {
     @Test
-    public void alertCountry() {
+    public void alertTown() {
         //Go to homepage and sign in Vendor account
         Page page =new Page();
         ReusableMethods.signInMethod(ConfigReader.getProperty("sabitEmail"),ConfigReader.getProperty("sabitPassword"));
@@ -27,17 +27,14 @@ public class TC_04_NegativeTestCountry {
         //Enter a surname
         page.billingLastname.sendKeys(ConfigReader.getProperty("addresseLastName"));
 
+        //Select a country from Country field
+        ReusableMethods.ddmValue(page.billingCountry,"DE");
+
         //Enter a Street address
         page.billingStreet.sendKeys(ConfigReader.getProperty("addresseStreet"));
 
         //Enter Zip Code
         page.billingZIP.sendKeys(ConfigReader.getProperty("billingZIP"));
-
-        //Enter a State
-        ReusableMethods.ddmIndex(page.billingState,3);
-
-        //Enter a Town
-        page.billingTown.sendKeys(ConfigReader.getProperty("addresseTown"));
 
         //Enter a phone number
         page.billingPhone.sendKeys(ConfigReader.getProperty("billingPhone"));
@@ -45,7 +42,7 @@ public class TC_04_NegativeTestCountry {
         //Click the Save Address button
         ReusableMethods.click(page.saveBillingAddress);
 
-        //Is the Country alert displayed?
-        Assert.assertEquals(page.alertBillingAddress.getText(),"Country / Region is a required field.");
+        //Check the street alert message
+        Assert.assertEquals(page.alertBillingAddress.getText(),"Town / City is a required field.");
     }
 }
