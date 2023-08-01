@@ -412,7 +412,7 @@ public class Page {
 
 
     // Yasemin Eric 414-464 arası
-    @FindBy(xpath ="(//i[@class='w-icon-account'])[1]") public WebElement signIn;
+    @FindBy(xpath ="(//i[@class='w-icon-account'])[1]") public WebElement signInY;
     @FindBy(xpath = "(//input[@name='username'])[1]") public WebElement usernameV;
     @FindBy(xpath = "//button[@name='login']") public WebElement login;
     @FindBy(xpath = "(//input[@class='form-control'])[1]") public WebElement searchBox;
@@ -457,7 +457,7 @@ public class Page {
     @FindBy(xpath = "//input[@id='wcfm_coupon_manager_submit_button']") public WebElement couponSubmit;
     @FindBy(xpath = "//div[@class='wcfm-message wcfm-success']") public WebElement couponSucces;
     @FindBy(xpath = "//a[text()='ab13Ac45']") public WebElement couponCode;
-
+    @FindBy(xpath = "(//button[@class='btn btn-search'])[1]") public WebElement searchIcon;
 
 
 

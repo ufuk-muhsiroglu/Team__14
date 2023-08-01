@@ -18,7 +18,7 @@ public class TC01 extends ExtentReport {
     public void test01() {
         extentTest = extentReports.createTest("US18_TC01", "Vendor olarak Coupon olusturma");
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
-        page.signIn.click();
+        page.signInY.click();
         page.usernameV.sendKeys(ConfigReader.getProperty("emailAll"), Keys.TAB, ConfigReader.getProperty("passwordAll"));
         page.login.click();
         extentTest.info("allovercommerce sitesine Vendor olarak giris yapildi");
@@ -36,9 +36,6 @@ public class TC01 extends ExtentReport {
 
         //coupons butonuna tikla
         Actions actions=new Actions(Driver.getDriver());
-        //actions.keyDown(Keys.PAGE_DOWN).perform();
-        //ReusableMethods.visibleWait(alloverPage.coupons, 5);
-        // alloverPage.coupons.click();
         ReusableMethods.scroll(page.coupons);
         ReusableMethods.bekle(2);
         page.coupons.click();
@@ -129,6 +126,7 @@ public class TC01 extends ExtentReport {
         ReusableMethods.bekle(2);
         ReusableMethods.tumSayfaResmi("Coupon_Listesi");
         ReusableMethods.bekle(2);
+
 
 
 
