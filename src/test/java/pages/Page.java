@@ -416,7 +416,7 @@ public class Page {
     @FindBy(xpath = "(//input[@name='username'])[1]") public WebElement usernameV;
     @FindBy(xpath = "//button[@name='login']") public WebElement login;
     @FindBy(xpath = "(//input[@class='form-control'])[1]") public WebElement searchBox;
-    @FindBy(xpath = "(//figure[@class='product-media'])[1]") public WebElement secilecekUrun;
+    @FindBy(xpath = "(//figure[@class='product-media'])[2]") public WebElement secilecekUrun;
     @FindBy(xpath = "//button[@name='add-to-cart']") public WebElement addToCartButton;
     @FindBy(xpath = "(//i[@class='w-icon-cart'])[1]") public WebElement cartIcon;
     @FindBy(xpath = "//a[@class='button wc-forward']") public WebElement viewChart;
