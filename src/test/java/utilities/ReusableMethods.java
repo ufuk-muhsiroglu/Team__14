@@ -1,5 +1,8 @@
 package utilities;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.github.javafaker.Faker;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -223,4 +226,25 @@ public class ReusableMethods {
             throw new RuntimeException(e);
         }
     }
+
+    //Extent Report Methodu
+
+    public static ExtentReports extentReports; //-->Raporlamayı başlatmak için kullanılan class
+    public static ExtentHtmlReporter extentHtmlReporter;//-->Raporu HTML formatında düzenler
+    public static ExtentTest extentTest;//--> Test adınlarına eklemek istediğimiz bilgileri bu class ile oluştururuz
+
+    public static void extentReport(String userStoryNumber, String reportName) {
+        extentReports = new ExtentReports();
+        String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
+        String dosyaYolu = "reportsandimages/reports/US_" + userStoryNumber + "_reports/positiveReports/US_" + userStoryNumber + tarih + ".html";
+        extentHtmlReporter = new ExtentHtmlReporter(dosyaYolu);
+        extentReports.attachReporter(extentHtmlReporter);//-->HTML formatında raporlamayı başlatacak
+        String browser = ConfigReader.getProperty("browser");
+        //Raporda gözükmesini isteğimiz bilgiler için
+        extentReports.setSystemInfo("Browser", browser);
+        extentReports.setSystemInfo("Tester", ConfigReader.getProperty(userStoryNumber));
+        extentHtmlReporter.config().setDocumentTitle("Extent Report");
+        extentHtmlReporter.config().setReportName(reportName);
+    }
+
 }
