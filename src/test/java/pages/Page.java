@@ -34,12 +34,12 @@ public class Page {
     public WebElement agreeButton;
     @FindBy(xpath = "//button[@name='register']")
     public WebElement signUpButton;
+    @FindBy(xpath = "//*[text()='An account is already registered with your email address. ']")
+    public WebElement alreadyRegisteredEmailMessage;
     @FindBy(xpath = "(//p[@class='submit-status'])[2]")
-    public WebElement alreadyRegisteredMessage;
-
-
-
-
+    public WebElement validAccountUsernameAllert;
+    @FindBy(xpath = "//*[text()='An account is already registered with that username. Please choose another.']")
+    public WebElement alreadyRegisteredUsernameMessage;
 
 
 
@@ -412,7 +412,7 @@ public class Page {
 
 
     // Yasemin Eric 414-464 arası
-    @FindBy(xpath ="(//i[@class='w-icon-account'])[1]") public WebElement signIn;
+   // @FindBy(xpath ="(//i[@class='w-icon-account'])[1]") public WebElement signIn;
     @FindBy(xpath = "(//input[@name='username'])[1]") public WebElement usernameV;
     @FindBy(xpath = "//button[@name='login']") public WebElement login;
     @FindBy(xpath = "(//input[@class='form-control'])[1]") public WebElement searchBox;
