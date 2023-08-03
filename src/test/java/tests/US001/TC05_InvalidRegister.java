@@ -41,6 +41,7 @@ public class TC05_InvalidRegister extends ExtentReport {
         ReusableMethods.bekle(2);
         String message = page.emailArea.getAttribute("validationMessage");
         Assert.assertTrue(message.contains("tam bir adres değil."));
+        extentTest.info("Lütfen @ işaretinden sonra gelen kısmı ekleyin. uyarısının çıktığı doğrulandı.");
         extentTest.info("Kayıt İşlemi başarısız.");
         ReusableMethods.tumSayfaResmi("01","Kayıt işlemi başarısız");
         Driver.closeDriver();

@@ -37,6 +37,7 @@ public class TC02_InvalidRegister extends ExtentReport {
 
         String message = page.agreeButton.getAttribute("validationMessage");
         Assert.assertTrue(message.contains("İlerlemek istiyorsanız lütfen bu kutuyu işaretleyin"));
+        extentTest.info("İlerlemek istiyorsanız lütfen bu kutuyu işaretleyin uyarısı alındı.");
 
         extentTest.info("Kayıt işlemi başarısız.");
         ReusableMethods.tumSayfaResmi("01","Kayıt işlemi başarısız.");

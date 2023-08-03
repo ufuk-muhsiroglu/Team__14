@@ -28,6 +28,7 @@ public class TC06_InvalidRegister extends ExtentReport {
 
         page.emailArea.sendKeys(faker.internet().emailAddress());
         extentTest.info("Email girildi.");
+        extentTest.info("Password alanı boş bırakıldı.");
 
         page.agreeButton.click();
         extentTest.info("I agree to the privacy policy butonu onaylandı.");
@@ -37,6 +38,7 @@ public class TC06_InvalidRegister extends ExtentReport {
 
         String message = page.passwordArea.getAttribute("validationMessage");
         Assert.assertTrue(message.contains("Lütfen bu alanı doldurun"));
+        extentTest.info("Lütfen bu alanı doldurun uyarısı alındı.");
         extentTest.info("Kayıt İşlemi başarısız.");
         ReusableMethods.tumSayfaResmi("01","Kayıt işlemi başarısız");
         Driver.closeDriver();

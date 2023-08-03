@@ -25,6 +25,7 @@ public class TC04_InvalidRegister extends ExtentReport {
 
         page.usernameArea.sendKeys(faker.name().username());
         extentTest.info("Username girildi.");
+        extentTest.info("Email alanı boş bırakıldı.");
 
         page.passwordArea.sendKeys(ConfigReader.getProperty("password"));
         extentTest.info("Password girildi.");
@@ -38,6 +39,7 @@ public class TC04_InvalidRegister extends ExtentReport {
         ReusableMethods.bekle(2);
         String message = page.emailArea.getAttribute("validationMessage");
         Assert.assertTrue(message.contains("Lütfen bu alanı doldurun"));
+        extentTest.info("Lütfen bu alanı doldurun uyarısı alındı.");
         extentTest.info("Kayıt İşlemi başarısız.");
         ReusableMethods.tumSayfaResmi("01","Kayıt işlemi başarısız");
 

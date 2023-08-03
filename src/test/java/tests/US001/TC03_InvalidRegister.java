@@ -38,6 +38,7 @@ public class TC03_InvalidRegister extends ExtentReport {
 
         String message = page.usernameArea.getAttribute("validationMessage");
         Assert.assertTrue(message.contains("Lütfen bu alanı doldurun"));
+        extentTest.info("Lütfen bu alanı doldurun uyarısı alındı.");
         extentTest.info("Kayıt İşlemi başarısız.");
         ReusableMethods.tumSayfaResmi("01","Kayıt işlemi başarısız");
         Driver.closeDriver();

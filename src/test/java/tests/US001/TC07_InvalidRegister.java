@@ -30,12 +30,15 @@ public class TC07_InvalidRegister extends ExtentReport {
         extentTest.info("Email girildi.");
 
         page.passwordArea.sendKeys(ConfigReader.getProperty("eksikPassword"));
-        extentTest.info("Eksik password girildi.");
+        extentTest.info("3 karakterden oluşan eksik bir password girildi.");
+        extentTest.fail("Sign Up butonu tıklanamaz oldu.");
 
         page.agreeButton.click();
+        ReusableMethods.bekle(3);
         extentTest.info("I agree to the privacy policy butonu onaylandı.");
-        ReusableMethods.tumSayfaResmi("01","Kayıt işlemi başarısız");
         Assert.assertFalse(page.signUpButton.isEnabled());
+
+        ReusableMethods.tumSayfaResmi("01","Kayıt işlemi başarısız");
         Driver.closeDriver();
     }
 }
