@@ -247,4 +247,21 @@ public class ReusableMethods {
         extentHtmlReporter.config().setReportName(reportName);
     }
 
+    public static String getScreenshot(String userStoryNumber, String name) throws IOException {
+        // naming the screenshot with the current date to avoid duplication
+        String date = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
+        // TakesScreenshot is an interface of selenium that takes the screenshot
+        TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+        // full path to the screenshot location
+        String dosyaYolu = System.getProperty("user.dir") + "/target/Screenshots/wepPage/US_" + userStoryNumber + "/" + name + date + ".png";
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        try {
+            // save the screenshot to the path given
+            FileUtils.copyFile(source, new File(dosyaYolu));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return dosyaYolu;
+    }
+
 }
