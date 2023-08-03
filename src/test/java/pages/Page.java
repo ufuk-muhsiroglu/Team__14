@@ -276,7 +276,7 @@ public class Page {
     public WebElement dashboard;
     @FindBy(xpath = "(//*[@class='submit-status'])[1]")
     public WebElement invalidMailError;
-    @FindBy(linkText = "Addresses")
+    @FindBy(linkText = "Addresses")git remote add https://github.com/ufuk-muhsiroglu/Team__14.git
     public WebElement addressesButton;
     @FindBy(xpath = "//a[contains(@class,'edit btn')]")
     public WebElement billingAdd;
