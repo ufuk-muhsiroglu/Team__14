@@ -266,7 +266,7 @@ public class ReusableMethods {
         return dosyaYolu;
     }
 
-}
+
  //File Upload Robot Class
     public static void uploadFile(String dosyaYolu){
         try{
@@ -286,6 +286,7 @@ public class ReusableMethods {
 
         }
     }
+}
 
 
 
