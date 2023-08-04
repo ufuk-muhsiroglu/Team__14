@@ -5,17 +5,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 import java.util.List;
+
+
+
+
+
+
+
 public class Page {
     public Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
-
-
-
-
-
 
 
 
@@ -462,6 +462,49 @@ public class Page {
 
 
     // Ufuk Muhsiroğlu 464-514 arası
+    @FindBy(xpath = "//*[@class='login inline-type']") public WebElement Us1920HomePagesignIn;
+    @FindBy(xpath = "(//input)[1]") public WebElement Us1920UserName;
+    @FindBy(xpath = "(//input)[2]") public WebElement Us1920UserPassword;
+    @FindBy(xpath = "(//button)[1]") public WebElement Us1920signInButton;
+    @FindBy(xpath = "//*[@class='form-control']") public WebElement Us1920SearchButton;
+    @FindBy(xpath = "//*[@name='add-to-cart']") public WebElement Us1920UrunEkleButton;
+    @FindBy(xpath = "//*[@class='woocommerce-message alert alert-simple alert-btn alert-success']") public WebElement Us1920ItemVerification;
+    @FindBy(xpath = "(//*[@class='w-icon-cart'])[1]") public WebElement Us1920CartButton;
+    @FindBy(xpath = "//*[@class='button wc-forward']") public WebElement Us1920ViewCartButton;
+    @FindBy(xpath = "//*[@class='quantity-plus w-icon-plus']") public WebElement Us1920PlusItemButton;
+    @FindBy(xpath = "//*[@name='update_cart']") public WebElement Us1920UpdateCartButton;
+    @FindBy(xpath = "//*[@value='2']") public WebElement Us1920QuantityButton;
+    @FindBy(xpath = "//*[@class='quantity-minus w-icon-minus']") public WebElement Us1920MinusItemButton;
+    @FindBy(xpath = "//*[@name='coupon_code']") public WebElement Us1920EnterCoupon;
+    @FindBy(xpath = "//*[@name='apply_coupon']") public WebElement Us1920ApplyCouponButton;
+    @FindBy(xpath = "//*[@class='woocommerce-notices-wrapper']") public WebElement Us1920CouponVerification;
+    @FindBy(xpath = "//*[@class='woocommerce-remove-coupon']") public WebElement Us1920RemoveCouponButton;
+    @FindBy(xpath = "//*[@role='alert']") public WebElement Us1920RemoveCouponVerification;
+    @FindBy(xpath = "//*[@class='checkout-button button alt wc-forward']") public WebElement Us1920CheckoutButton;
+    @FindBy(xpath = "(//*[@class='input-radio'])[2]") public WebElement Us1920PaymentClick;
+    @FindBy(xpath = "//*[@class='col-lg-8 pr-lg-4']") public WebElement Us1920EmptyClick;
+    @FindBy(xpath = "//*[@id='place_order']") public WebElement Us1920PlaceOrderButton;
+    @FindBy(xpath = "//*[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']") public WebElement Us1920OrderVerify;
+    @FindBy(xpath = "//*[@class='login inline-type']") public WebElement SignIn1;
+    @FindBy(xpath = "//*[@name='username']") public WebElement SignInUserName;
+    @FindBy(xpath = "(//*[@name='password'])[1]") public WebElement SignInEmail;
+    @FindBy(xpath = "//*[@name='login']") public WebElement SubmitSignIn;
+    @FindBy(xpath = "(//*[@class='form-control'])[1]") public WebElement SearchBox;
+    @FindBy(xpath = "//*[@class='quantity-plus w-icon-plus']") public WebElement Arti1;
+    @FindBy(xpath = "//*[@class='single_add_to_cart_button button alt']") public WebElement AddToCartButton;
+    @FindBy(xpath = "//*[@class='cart-label']") public WebElement CartBox;
+    @FindBy(xpath = "//*[@class='button checkout wc-forward']") public WebElement CheckoutButton;
+    @FindBy(xpath = "//*[@id=\"customer_details\"]/div[1]/h3") public WebElement Billing;
+    @FindBy(xpath = "//*[@class='showcoupon']") public WebElement EnterYourCodeClick;
+    @FindBy(xpath = "//*[@class='input-text form-control mr-0 mr-sm-1 mb-4 mb-sm-0']") public WebElement EnterYourCode;
+    @FindBy(xpath = "//*[@class='btn button btn-rounded btn-default']") public WebElement ApplyCouponButton;
+    @FindBy(xpath = "//*[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']") public WebElement ApplyCouponSubmit;
+    @FindBy(xpath = "//*[@class='woocommerce-remove-coupon']") public WebElement RemoveCouponButton;
+    @FindBy(xpath = "//*[@class='button alt']") public WebElement PlaceOrderClick;
+    @FindBy(xpath = "//*[@class='woocommerce-order-overview woocommerce-thankyou-order-details order_details']") public WebElement ThankYouVerify;
+    @FindBy(xpath = "//*[@href='/my-account-2/orders/']") public WebElement MyOrderClick;
+    @FindBy(xpath = "//*[@class='woocommerce-button btn btn-default btn-rounded btn-outline btn-sm btn-block view']") public WebElement ViewClick;
+    @FindBy(xpath = "//*[@class='woocommerce-order-details__title']") public WebElement OrderDetail;
 
 
 
