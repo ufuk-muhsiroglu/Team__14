@@ -1,17 +1,14 @@
 package tests.US007;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WindowType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.OpenSourcePage;
+import pages.Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
-import static utilities.ExtentReport.extentTest;
 
 
 public class TC02 extends TestBaseRapor{
@@ -23,15 +20,16 @@ public class TC02 extends TestBaseRapor{
 //    Kucuk harf, büyük harf, rakam ve special karakter içeren Password gir
 //    "I agree to the privacy policy" tıklanmadan kayıt olunmamalı
 //    SIGN UP butonuna tıklayarak kayıt yapılmalı
-//    Arama butonundan ürün ara.
-//    Gelen ürünlerden herhangi birini seç.
-//    Compare Products alanında toplam 4 ürün seçili olduğunu değrula.
-//     Start Compare butonuna tıklayıp karşılaştırma yapıldığını doğrula.
+//  "Compare Products alanındaki ürünlerin sağ üst kısmında bulunan
+//“X” ikonuna tıklayıp ürünleri teker teker sil."
+//Tüm ürünlerin silindiğini doğrula.
+//Arama butonundan farklı ürünleri seç.
+//Toplamda 4 ürün seçildiğini doğrula.
 
     @Test
     public void testName() {
         extentTest = extentReports.createTest("Add Billing Address 01", "Test Raporu");
-        OpenSourcePage page = new OpenSourcePage();
+        Page page = new Page();
 
 //        Ana sayfaya git.
         Driver.getDriver().get(ConfigReader.getProperty("url"));
@@ -51,7 +49,7 @@ public class TC02 extends TestBaseRapor{
 //        "I agree to the privacy policy" tıklanmadan kayıt olunmadigini dogrula
         Assert.assertTrue(page.tickBoxAlert.isDisplayed());
         ReusableMethods.bekle(5);
-        extentTest.info("\"I agree to the privacy policy\" tıklanmadan kayıt olunmadigini dogrulandi");
+        extentTest.info("I agree to the privacy policy box tıklanmadan kayıt olunmadigini dogrulandi");
 
 //        SIGN UP butonuna tıklayarak kayıt yap
         page.tickBox.click();
@@ -59,20 +57,14 @@ public class TC02 extends TestBaseRapor{
         ReusableMethods.bekle(8);
         extentTest.info("SIGN UP butonuna tıklayarak kayıt yapildi");
 
-//        Arama butonundan ürün ara. "macbook"
-        page.searchBox.sendKeys("macbook",Keys.ENTER);
-        extentTest.info("Registera tiklandi");
+//  "Compare Products alanındaki ürünlerin sağ üst kısmında bulunan
+//“X” ikonuna tıklayıp ürünleri teker teker sil.
 
+//Tüm ürünlerin silindiğini doğrula
 
-//        Gelen ürünlerden herhangi birini seç.
-        ReusableMethods.bekle(2);
-        page.ilkUrun.click();
-        extentTest.info("Gelen ürünlerden herhangi biri secildi");
+//Arama butonundan farklı ürünleri seç.
 
-
-
-        // Compare Products alanında toplam 4 ürün seçili olduğunu değrula.
-        // Start Compare butonuna tıklayıp karşılaştırma yapıldığını doğrula.
+//Toplamda 4 ürün seçildiğini doğrula.
 
 
     }

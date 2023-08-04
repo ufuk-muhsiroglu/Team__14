@@ -1,17 +1,15 @@
 package tests.US007;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WindowType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.OpenSourcePage;
+import pages.Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
-import static utilities.ExtentReport.extentTest;
+
 
 
 public class TC03 extends TestBaseRapor{
@@ -31,7 +29,7 @@ public class TC03 extends TestBaseRapor{
     @Test
     public void testName() {
         extentTest = extentReports.createTest("Add Billing Address 01", "Test Raporu");
-        OpenSourcePage page = new OpenSourcePage();
+        Page page = new Page();
 
 //        Ana sayfaya git.
         Driver.getDriver().get(ConfigReader.getProperty("url"));
@@ -51,7 +49,7 @@ public class TC03 extends TestBaseRapor{
 //        "I agree to the privacy policy" tıklanmadan kayıt olunmadigini dogrula
         Assert.assertTrue(page.tickBoxAlert.isDisplayed());
         ReusableMethods.bekle(5);
-        extentTest.info("\"I agree to the privacy policy\" tıklanmadan kayıt olunmadigini dogrulandi");
+        extentTest.info("I agree to the privacy policy box una tıklanmadan kayıt olunmadigini dogrulandi");
 
 //        SIGN UP butonuna tıklayarak kayıt yap
         page.tickBox.click();
@@ -60,7 +58,7 @@ public class TC03 extends TestBaseRapor{
         extentTest.info("SIGN UP butonuna tıklayarak kayıt yapildi");
 
 //        Arama butonundan ürün ara. "macbook"
-        page.searchBox.sendKeys("macbook",Keys.ENTER);
+        page.searchBoxy.sendKeys("macbook",Keys.ENTER);
         extentTest.info("Registera tiklandi");
 
 
@@ -68,6 +66,13 @@ public class TC03 extends TestBaseRapor{
         ReusableMethods.bekle(2);
         page.ilkUrun.click();
         extentTest.info("Gelen ürünlerden herhangi biri secildi");
+
+        //    Compare Products alanında toplam 4 ürün seçili olduğunu değrula.
+        //    Start Compare butonuna tıklayıp karşılaştırma yapıldığını doğrula.
+
+
+        ReusableMethods.tumSayfaResmi("07","Gelen ürünlerden herhangi biri secildı");
+
 
     }
 }

@@ -1,11 +1,9 @@
 package tests.US007;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WindowType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.OpenSourcePage;
+import pages.Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -40,7 +38,7 @@ public class TC05 extends TestBaseRapor{
     @Test
     public void testName() {
         extentTest = extentReports.createTest("Add Billing Address 01", "Test Raporu");
-        OpenSourcePage page = new OpenSourcePage();
+        Page page = new Page();
 
 //        Ana sayfaya git.
         Driver.getDriver().get(ConfigReader.getProperty("url"));
@@ -60,7 +58,7 @@ public class TC05 extends TestBaseRapor{
 //        "I agree to the privacy policy" tıklanmadan kayıt olunmadigini dogrula
         Assert.assertTrue(page.tickBoxAlert.isDisplayed());
         ReusableMethods.bekle(5);
-        extentTest.info("\"I agree to the privacy policy\" tıklanmadan kayıt olunmadigini dogrulandi");
+        extentTest.info("I agree to the privacy policy box una tıklanmadan kayıt olunmadigini dogrulandi");
 
 //        SIGN UP butonuna tıklayarak kayıt yap
         page.tickBox.click();

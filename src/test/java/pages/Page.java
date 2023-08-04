@@ -167,35 +167,21 @@ public class Page {
     @FindBy(xpath= "(//*[@id='register-policy'])[1]")    public WebElement tickBox;
     @FindBy(xpath= "//*[@class='login-popup']")    public WebElement tickBoxAlert;
     @FindBy(xpath= "(//*[@value='Sign Up'])[1]")    public WebElement singUp;
-    @FindBy(xpath= "(//*[@placeholder='Search'])[1]")    public WebElement searchBox;
+    @FindBy(xpath= "(//*[@type='search'])[1]")    public WebElement searchBoxy;
     @FindBy(xpath= "(//*[@type='search'])[1]")    public WebElement searchBoxAgain;
     @FindBy(xpath= "(//h3)[2]")    public WebElement ilkUrun;
     @FindBy(xpath= "//*[text()='Start Compare !']")    public WebElement startCompareButton;
     @FindBy(xpath= "//*[@class='product-title']")    public WebElement fotoIcinLocation;
     @FindBy(xpath= "(//h3)[3]")    public WebElement ikinciUrun;
     @FindBy(xpath= "(//*[@href='#'])[4]")    public WebElement scaleIkon;
-    @FindBy(xpath= "(//h3)[4]")
-    public WebElement ucuncuUrun;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath= "(//h3)[4]") public WebElement ucuncuUrun;
+    @FindBy(xpath = "//a[contains(@data-title,'Browse wishlist...')]") public WebElement wishListFav ;
+    @FindBy(xpath = "(//*[@data-title='Add to wishlist'])[1]")   public WebElement kalpFavori;
+    @FindBy(xpath = " (//td)[1]") public WebElement wishListUrun;
+    @FindBy(xpath = "//button[contains(@title,'Quick View')]") public WebElement quickView;
+    @FindBy(xpath = "(//h2)[1]") public WebElement quickViewUrun;
+    @FindBy(xpath = "//a[contains(@class,'compare-clean')]") public WebElement clearAll;
+    @FindBy(xpath = "//h2[@class='page-title'][contains(.,'Compare')]") public WebElement  comparekarsılastırma;
 
 
 
@@ -429,7 +415,7 @@ public class Page {
     @FindBy(xpath ="(//i[@class='w-icon-account'])[1]") public WebElement signInY;
     @FindBy(xpath = "(//input[@name='username'])[1]") public WebElement usernameV;
     @FindBy(xpath = "//button[@name='login']") public WebElement login;
-    //@FindBy(xpath = "(//input[@class='form-control'])[1]") public WebElement searchBox;
+    @FindBy(xpath = "(//input[@class='form-control'])[1]") public WebElement searchBox;
     @FindBy(xpath = "(//figure[@class='product-media'])[1]") public WebElement secilecekUrun;
     @FindBy(xpath = "//button[@name='add-to-cart']") public WebElement addToCartButton;
     @FindBy(xpath = "(//i[@class='w-icon-cart'])[1]") public WebElement cartIcon;

@@ -1,17 +1,14 @@
 package tests.US007;
 
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WindowType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.OpenSourcePage;
+import pages.Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
-import static utilities.ExtentReport.extentTest;
 
 
 public class TC04 extends TestBaseRapor{
@@ -31,7 +28,7 @@ public class TC04 extends TestBaseRapor{
     @Test
     public void testName() {
         extentTest = extentReports.createTest("Add Billing Address 01", "Test Raporu");
-        OpenSourcePage page = new OpenSourcePage();
+        Page page = new Page();
 
 //        Ana sayfaya git.
         Driver.getDriver().get(ConfigReader.getProperty("url"));
@@ -44,7 +41,7 @@ public class TC04 extends TestBaseRapor{
 //        Username gir
 //        Geçerli e-mail adresi gir
 //        Kucuk harf, büyük harf, rakam ve special karakter içeren Password gir
-        page.userName1.sendKeys("Ayp", Keys.TAB, ConfigReader.getProperty("email1"),
+        page.userName1.sendKeys("Alp", Keys.TAB, ConfigReader.getProperty("email1"),
                 Keys.TAB, ConfigReader.getProperty("password1"),Keys.ENTER);
         extentTest.info("Username, email address ve password girildi");
 
@@ -59,21 +56,28 @@ public class TC04 extends TestBaseRapor{
         ReusableMethods.bekle(8);
         extentTest.info("SIGN UP butonuna tıklayarak kayıt yapildi");
 
-//        Arama butonundan ürün ara. "macbook"
-        page.searchBox.sendKeys("macbook",Keys.ENTER);
-        extentTest.info("Registera tiklandi");
-
-
-//        Gelen ürünlerden herhangi birini seç.
-        ReusableMethods.bekle(2);
+//       Compare Products alanında toplam 2 ürün seçin.
+        page.searchBoxy.sendKeys("macbook",Keys.ENTER);
         page.ilkUrun.click();
-        extentTest.info("Gelen ürünlerden herhangi biri secildi");
-
-      //  Compare Products alanında toplam 4 ürün seçili olduğunu değrula.
-
+        ReusableMethods.click(page.scaleIkon);
+        extentTest.info("Ilk urun secıldı ve aklendı");
 
 
-      //  Compare Products alanındaki ürünleri silmek için Clean All butonuna tıkla.
+
+//        Gelen ürünlerden ıkıncı urun ekle
+        page.searchBoxy.sendKeys("macbook",Keys.ENTER);
+        ReusableMethods.click(page.ikinciUrun);
+        ReusableMethods.click(page.scaleIkon);
+        ReusableMethods.bekle(3);
+        extentTest.info(" Compare Products alanında toplam 2 ürün seçildı");
+
+
+//       Compare Products alanındaki ürünleri silmek için Clean All butonuna tıkla ve sılındıgını dogrula.
+        page.clearAll.click();
+        extentTest.info(" Compare Products alanındaki ürünleri silındı ");
+        ReusableMethods.bekle(3);
+
+        ReusableMethods.tumSayfaResmi("07","Compare Products alanındaki ürünleri silındıgı goruldu");
 
 
     }

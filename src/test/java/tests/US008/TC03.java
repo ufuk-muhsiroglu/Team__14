@@ -1,21 +1,17 @@
 package tests.US008;
 
 
-
-import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.OpenSourcePage;
+import pages.Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
-import static utilities.ExtentReport.extentTest;
 
 
 public class TC03 extends TestBaseRapor{
@@ -37,7 +33,7 @@ public class TC03 extends TestBaseRapor{
     @Test
     public void testName() {
         extentTest = extentReports.createTest("Add Billing Address 01", "Test Raporu");
-        OpenSourcePage page = new OpenSourcePage();
+        Page page = new Page();
 
 //        Ana sayfaya git.
         Driver.getDriver().get(ConfigReader.getProperty("url"));
@@ -94,20 +90,20 @@ public class TC03 extends TestBaseRapor{
 //    enter your town  on "Town/City" section
 //    enter your Zip Code on "Postcode/Zip*" section
 
-        sourcePage.billingStreet.sendKeys("fgdshjsdk", Keys.TAB, Keys.TAB, "gfdkkj",
+        page.billingStreet.sendKeys("fgdshjsdk", Keys.TAB, Keys.TAB, "gfdkkj",
                 Keys.TAB, Keys.TAB+ "1234", Keys.TAB, "123456789");
         extentTest.info("Street address, Town, Postcode ve Phone bilgileri girildi.");
         ReusableMethods.bekle(2);
 
 //    Select your contry/region on "Country/Region" selection
-        WebElement countrySelect = sourcePage.billingCountrySelect;
+        WebElement countrySelect = page.billingCountrySelect;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Australia");
         extentTest.info("Country secildi. ");
 
 //    select your State on "State" section
 
-        WebElement stateSelect = sourcePage.billingStateSelect;
+        WebElement stateSelect = page.billingStateSelect;
         Select select1 = new Select(stateSelect);
         select1.selectByIndex(4);
         ReusableMethods.bekle(2);
@@ -116,12 +112,12 @@ public class TC03 extends TestBaseRapor{
 
 //   Make sure that the email address has no '@'
 
-        ReusableMethods.sendKeysJS(sourcePage.billingEmail, ConfigReader.getProperty("wrongEmailAddress"));
+        ReusableMethods.sendKeysJS(page.billingEmail, ConfigReader.getProperty("wrongEmailAddress"));
         ReusableMethods.bekle(2);
 
 //    Click the "SAVE ADDRESS" button
 
-        sourcePage.billingSubmit.click();
+        page.billingSubmit.click();
         ReusableMethods.bekle(2);
         extentTest.info("Save address butonuna tiklandi. ");
 
