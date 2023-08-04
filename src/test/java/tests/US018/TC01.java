@@ -29,26 +29,26 @@ public class TC01 extends ExtentReport {
         ReusableMethods.bekle(2);
 
         //SignOut/MyAccount butonuna tikla
-        page.signOut.click();
+        page.signOutY.click();
         ReusableMethods.bekle(2);
         extentTest.info("My account sayfasina gidildi");
 
         //Store Manager Butonuna tikla
-        page.storeManager.click();
+        page.storeManagerY.click();
         ReusableMethods.bekle(2);
         extentTest.info("Store Manager alanina gidildi");
 
         //coupons butonuna tikla
         Actions actions=new Actions(Driver.getDriver());
-        ReusableMethods.scroll(page.coupons);
+        ReusableMethods.scroll(page.couponsY);
         ReusableMethods.bekle(2);
-        page.coupons.click();
+        page.couponsY.click();
         ReusableMethods.bekle(2);
         extentTest.info("Coupon olusturmak icin coupon butonuna tiklandi");
 
         //"add new" butonuna tikla
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        page.addNew.click();
+        page.addNewY.click();
         ReusableMethods.bekle(2);
         extentTest.info("Add New butonuna tiklandi");
 
@@ -99,33 +99,33 @@ public class TC01 extends ExtentReport {
         ReusableMethods.webElementResmi(page.expiryDate);
 
         //Allow free shipping, Show on store kutularini sec
-        Assert.assertTrue(page.freeship.isEnabled());
+        Assert.assertTrue(page.freeshipY.isEnabled());
         extentTest.pass("Allow free shipping alaninin secilebilir oldugu dogrulandi");
-        page.freeship.click();
-        Assert.assertTrue(page.showOnStore.isEnabled());
+        page.freeshipY.click();
+        Assert.assertTrue(page.showOnStoreY.isEnabled());
         extentTest.pass("Show on store alaninin secilebilir oldugu dogrulandi");
-        page.showOnStore.click();
+        page.showOnStoreY.click();
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.bekle(2);
 
         //Submit butonuna tikla
-        page.couponSubmit.click();
+        page.couponSubmitY.click();
         extentTest.info("Coupon olusturmak icin submit butonuna tiklandi");
         ReusableMethods.tumSayfaResmi("Coupon_Basarili_Yazisi");
-        Assert.assertEquals(page.couponSucces.getText(),"Coupon Successfully Published.");
+        Assert.assertEquals(page.couponSuccesY.getText(),"Coupon Successfully Published.");
         extentTest.pass(" 'Coupon Successfully Published.' yazisinin görüldügü dogrulandi.");
         ReusableMethods.bekle(5);
 
         //Coupons butonuna tikla
-        ReusableMethods.scroll(page.coupons);
+        ReusableMethods.scroll(page.couponsY);
         ReusableMethods.bekle(2);
-        page.coupons.click();
+        page.couponsY.click();
         ReusableMethods.bekle(3);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.bekle(2);
 
         //Coupons olusturuldugu dogrulanmali
-        Assert.assertEquals(page.couponCode.getText(),ConfigReader.getProperty("code"));
+        Assert.assertEquals(page.couponCodeY.getText(),ConfigReader.getProperty("code"));
         extentTest.pass("Coupon listesinde ayni code ile coupon oldugu dogrulandi");
         ReusableMethods.bekle(2);
         ReusableMethods.tumSayfaResmi("Coupon_Listesi");

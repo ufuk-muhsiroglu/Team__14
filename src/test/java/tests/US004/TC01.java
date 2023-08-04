@@ -44,7 +44,7 @@ public class TC01 extends ExtentReport {
         page.signIn.click();
         page.userName.sendKeys(ConfigReader.getProperty("alloverUserName"),
                 Keys.TAB, ConfigReader.getProperty("alloverPassword"), Keys.TAB, Keys.ENTER);
-        extentTest.info("sing in yapildi. ");
+        extentTest.info("sign in yapildi. ");
 
 
 //    Go to "myAccount"

@@ -31,7 +31,7 @@ public class TC01 extends ExtentReport {
         //arama alanina aranacak urunu yaz, Arama ikonuna tikla
         page.searchBox.sendKeys(ConfigReader.getProperty("product"));
         ReusableMethods.bekle(2);
-        page.searchIcon.click();
+        page.searchIconY.click();
         extentTest.info("allovercommerce sitesinde pencil ürünü aratildi");
         ReusableMethods.bekle(2);
 
@@ -78,51 +78,51 @@ public class TC01 extends ExtentReport {
         //Fatura ayrıntıları (BILLING DETAILS) doldurulabilmeli
         //"first name" alanina first name gir
         //"last name" alanina last name gir
-        page.firstName.clear();
-        page.firstName.sendKeys(ConfigReader.getProperty("firstNameY"),Keys.TAB, ConfigReader.getProperty("lastNameY"),Keys.TAB,Keys.TAB);
+        page.firstNameY.clear();
+        page.firstNameY.sendKeys(ConfigReader.getProperty("firstNameY"),Keys.TAB, ConfigReader.getProperty("lastNameY"),Keys.TAB,Keys.TAB);
 
         //"country/region" alanina country gir
-        Select select=new Select(page.country);
+        Select select=new Select(page.countryY);
         select.selectByVisibleText("Turkey");
 
         //"Street address" alanina address gir
         //"Town/city" alanina city gir
         //"Zip code" alanina Zip code gir
-        page.street.clear();
-        page.street.sendKeys(ConfigReader.getProperty("streetAdress"), Keys.TAB,Keys.TAB,
+        page.streetY.clear();
+        page.streetY.sendKeys(ConfigReader.getProperty("streetAdress"), Keys.TAB,Keys.TAB,
                 ConfigReader.getProperty("postCode"), Keys.TAB, ConfigReader.getProperty("cityName"),Keys.TAB);
 
         //"Province " alanina province gir
-        Select select2=new Select(page.province);
+        Select select2=new Select(page.provinceY);
         select2.selectByVisibleText(ConfigReader.getProperty("provinceName"));
 
         //"Phone" alanina phone gir
-        page.phoneNum.clear();
-        page.phoneNum.sendKeys(ConfigReader.getProperty("phone"));
+        page.phoneNumY.clear();
+        page.phoneNumY.sendKeys(ConfigReader.getProperty("phone"));
         ReusableMethods.bekle(2);
 
         //"Email " alanina email gir
-        page.emailAdress.clear();
-        page.emailAdress.sendKeys(ConfigReader.getProperty("emailAll"));
+        page.emailAdressY.clear();
+        page.emailAdressY.sendKeys(ConfigReader.getProperty("emailAll"));
         extentTest.info("Fatura ayrıntıları (BILLING DETAILS) dolduruldu");
 
         //toplam rakamin gorundugunu dogrula
-        Assert.assertTrue(page.total.isDisplayed());
-        ReusableMethods.webElementResmi(page.total);
+        Assert.assertTrue(page.totalY.isDisplayed());
+        ReusableMethods.webElementResmi(page.totalY);
         extentTest.pass("Toplam ödenecek rakamin görüntülenebildigi dogrulandi");
 
         //Wire transfer/EFT veya Pay at the door seçeneklerinden birini sec
         ReusableMethods.bekle(3);
-        page.payAtDoor.click();
+        page.payAtDoorY.click();
         ReusableMethods.bekle(2);
-        Assert.assertTrue(page.wireEft.isEnabled() || page.payAtDoor.isEnabled());
+        Assert.assertTrue(page.wireEftY.isEnabled() || page.payAtDoorY.isEnabled());
         ReusableMethods.tumSayfaResmi("Billing");
         extentTest.pass("Wire transfer/EFT veya Pay at the door seçeneklerinin secilebildigi dogrulandi");
 
         //Place Ordera tikla
         actions.keyDown(Keys.PAGE_DOWN);
         ReusableMethods.bekle(3);
-        page.placeOrder.click();
+        page.placeOrderY.click();
         ReusableMethods.bekle(15);
 
         //islemin tamamlandigini dogrula
@@ -131,16 +131,16 @@ public class TC01 extends ExtentReport {
         extentTest.pass("Place Order'a tıklanarak alışverişin basarili bir sekilde tamamlandigi dogrulandi");
 
         //SignOut/MyAccount butonuna tikla
-        page.signOut.click();
+        page.signOutY.click();
         ReusableMethods.bekle(5);
 
         //orders butonuna tikla
-        ReusableMethods.visibleWait(page.orders,5);
-        page.orders.click();
+        ReusableMethods.visibleWait(page.ordersY,5);
+        page.ordersY.click();
         ReusableMethods.bekle(2);
 
         //alisverise ait view butonuna tikla
-        page.view.click();
+        page.viewY.click();
         ReusableMethods.bekle(2);
 
         //bilgilerin goruntulendigini dogrula
