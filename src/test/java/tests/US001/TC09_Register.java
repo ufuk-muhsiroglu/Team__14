@@ -9,12 +9,12 @@ import utilities.Driver;
 import utilities.ExtentReport;
 import utilities.ReusableMethods;
 
-public class TC06_InvalidRegister extends ExtentReport {
+public class TC09_Register extends ExtentReport {
     Page page = new Page();
     Faker faker = new Faker();
 
     @Test
-    public void testCase06() {
+    public void testCase09() {
         extentTest = extentReports.createTest("Kayıt İşlemi Başarısız", "Test Raporu");
 
         Driver.getDriver().get(ConfigReader.getProperty("url"));
@@ -23,12 +23,15 @@ public class TC06_InvalidRegister extends ExtentReport {
         page.registerButton.click();
         extentTest.info("Register butonuna tıklandı.");
 
-        page.usernameArea.sendKeys(faker.name().username());
-        extentTest.info("Username girildi.");
+        String fakeUsername = faker.name().username();
+        page.usernameArea.sendKeys(fakeUsername+".123");
+        extentTest.info("Username.123 şeklinde username girildi.");
 
         page.emailArea.sendKeys(faker.internet().emailAddress());
         extentTest.info("Email girildi.");
-        extentTest.info("Password alanı boş bırakıldı.");
+
+        page.passwordArea.sendKeys(ConfigReader.getProperty("password"));
+        extentTest.info("Password girildi.");
 
         page.agreeButton.click();
         extentTest.info("I agree to the privacy policy butonu onaylandı.");
@@ -36,11 +39,9 @@ public class TC06_InvalidRegister extends ExtentReport {
         page.signUpButton.click();
         extentTest.info("Sign Up butonuna tıklandı.");
 
-        String message = page.passwordArea.getAttribute("validationMessage");
-        Assert.assertTrue(message.contains("Lütfen bu alanı doldurun"));
-        extentTest.info("Lütfen bu alanı doldurun uyarısı alındı.");
-        extentTest.info("Kayıt İşlemi başarısız.");
-        ReusableMethods.tumSayfaResmi("01","Kayıt işlemi başarısız");
+        Assert.assertTrue(page.signOutButton.isDisplayed());
+        extentTest.info("Kayıt İşlemi başarılı.");
+        ReusableMethods.tumSayfaResmi("01","Kayıt işlemi başarılı");
         Driver.closeDriver();
     }
 }
