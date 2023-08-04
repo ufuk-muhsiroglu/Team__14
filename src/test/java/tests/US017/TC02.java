@@ -13,21 +13,25 @@ import utilities.ReusableMethods;
 
 public class TC02 extends ExtentReport {
     Page page=new Page();
+
     @Test
     public void test01() {
         extentTest = extentReports.createTest("US17_TC02","Vendor olarak Alisveris Yapma_Negatif Senaryo");
+
         //Anasayfaya git
         Driver.getDriver().get(ConfigReader.getProperty("alloverUrl"));
+
         //sing in ol
-        page.signIn.click();
+        page.signInY.click();
         page.usernameV.sendKeys(ConfigReader.getProperty("emailAll"), Keys.TAB, ConfigReader.getProperty("passwordAll"));
         page.login.click();
         extentTest.info("allovercommerce sitesine Vendor olarak giris yapildi");
         ReusableMethods.bekle(2);
 
         //arama alanina aranacak urunu yaz, Arama ikonuna tikla
-        page.searchBox.sendKeys(ConfigReader.getProperty("product"), Keys.ENTER);
-        //
+        page.searchBox.sendKeys(ConfigReader.getProperty("product"));
+        ReusableMethods.bekle(2);
+        page.searchIconY.click();
         extentTest.info("allovercommerce sitesinde pencil ürünü aratildi");
         ReusableMethods.bekle(2);
 
@@ -37,23 +41,30 @@ public class TC02 extends ExtentReport {
         ReusableMethods.visibleWait(page.secilecekUrun,3);
         page.secilecekUrun.click();
         String secilenUrun=page.productNameBefore.getText();
+        extentTest.info("Listenen ürünlerden biri secildi");
         ReusableMethods.bekle(2);
 
         //miktar sec
         page.quantityPlusInPage.click();
+        extentTest.info("Secilen ürünün miktari arttirildi");
         //"add to cart" butonuna tikla
         page.addToCartButton.click();
+        extentTest.info("Ürünler sepete eklendi");
 
         //cart'a tikla
         page.cartIcon.click();
         ReusableMethods.bekle(2);
+
         //"view cart" butonuna tikla
         page.viewChart.click();
         ReusableMethods.bekle(2);
+
         //sepeti goruntule
         //urunlerin gorundugunu dogrula
         Assert.assertEquals(secilenUrun,page.productName.getText());
+        extentTest.pass("Secilen ürünlerin sepette oldugu dogrulandi");
         ReusableMethods.bekle(2);
+
         //Proceed to checkout butonuna tikla
         ReusableMethods.scroll(page.proceedCheckout);
         ReusableMethods.bekle(2);
@@ -65,22 +76,22 @@ public class TC02 extends ExtentReport {
         extentTest.pass("Cart-Checkout yapilarak alinacak ürünler görüntülendi");
 
         //Fatura icin doldurulmasi gereken alanlardan birini doldurup digerlerini bos birak
-        page.firstName.clear();
-        page.firstName.sendKeys(ConfigReader.getProperty("firstName"));
-        page.lastName.clear();
-        page.street.clear();
-        page.city.clear();
-        page.emailAdress.clear();
-        page.phoneNum.clear();
-        extentTest.info("Fatura ayrıntıları (BILLING DETAILS) kisminda sadece bir alan dolduruldu");
+        page.firstNameY.clear();
+        page.firstNameY.sendKeys(ConfigReader.getProperty("firstNameY"));
+        page.lastNameY.clear();
+        page.streetY.clear();
+        page.cityY.clear();
+        page.emailAdressY.clear();
+        page.phoneNumY.clear();
+        extentTest.info("Fatura ayrıntıları (BILLING DETAILS) kisminda sadece bir alan (First Name) dolduruldu");
 
         //Wire transfer/EFT veya Pay at the door seçeneklerinden birini sec
         ReusableMethods.bekle(6);
-        if (page.wireEft.isSelected()) {
-            page.payAtDoor.click();
+        if (page.wireEftY.isSelected()) {
+            page.payAtDoorY.click();
         }
         ReusableMethods.bekle(2);
-        Assert.assertTrue(page.wireEft.isEnabled() || page.payAtDoor.isEnabled());
+        Assert.assertTrue(page.wireEftY.isEnabled() || page.payAtDoorY.isEnabled());
         ReusableMethods.tumSayfaResmi("Billing");
         extentTest.pass("Wire transfer/EFT veya Pay at the door seçeneklerinin secilebildigi dogrulandi");
 
@@ -88,25 +99,21 @@ public class TC02 extends ExtentReport {
         actions.keyDown(Keys.PAGE_DOWN).perform();
 
         ReusableMethods.bekle(3);
-        page.placeOrder.click();
+        page.placeOrderY.click();
+        extentTest.info("Place Order butonuna tiklandi");
+
         //islemin tamamlanmadigini dogrula
         //Zorunlu alanlarin her biri icin uyari yazisi göründügünü dogrula
         for (WebElement w:page.alertsList) {
             Assert.assertTrue(w.isDisplayed());
             System.out.println(w.getText());
         }
-        ReusableMethods.visibleWait(page.placeOrder,6);
-        Assert.assertTrue(page.placeOrder.isEnabled());
+        ReusableMethods.bekle(2);
         ReusableMethods.tumSayfaResmi("Uyarilar");
-        extentTest.pass("Zorunlu alanlarin hepsi doldurulmadigi icin, Place Order'a tıklanarak alışverişin  tamamlandigi dogrulandi");
-
-
-
-
-
-
-
-
+        extentTest.info("Zorunlu alanlardan doldurulmayan alanlar icin uyari yazilari görüntülendi");
+        ReusableMethods.visibleWait(page.placeOrderY,6);
+        Assert.assertTrue(page.placeOrderY.isEnabled());
+        extentTest.pass("Zorunlu alanlarin hepsi doldurulmadigi icin alışverişin tamamlanamadigi dogrulandi");
 
 
 
