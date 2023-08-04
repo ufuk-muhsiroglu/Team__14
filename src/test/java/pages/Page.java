@@ -312,7 +312,52 @@ public class Page {
 
 
     // Bergüzar Zeynep Ölmez 314-364 arası
-
+    // US13
+    @FindBy(xpath = "(//input)[1]") public WebElement signInUsername;
+    @FindBy(xpath = "(//input)[2]") public WebElement signInPassword;
+    @FindBy(xpath = "(//button)[1]") public WebElement signInSubmit;
+    @FindBy(xpath = "//*[@class='login logout inline-type']") public WebElement signOutButonu;
+    //US14
+    @FindBy(xpath = "//*[text()='Edit Your Shipping Address']") public WebElement editShipping;
+    @FindBy(xpath = "//*[@id='main']/div/div/div/div/div/div/nav/ul/li[5]/a") public WebElement adresler;
+    @FindBy(xpath ="//*[@class='edit btn btn-link btn-primary btn-underline mb-4']") public WebElement AddShippingAddr;
+    @FindBy(xpath = "//input[@id='shipping_first_name']") public WebElement firstName;
+    @FindBy(xpath ="//input[@id='shipping_last_name']") public WebElement lastName;
+    @FindBy(xpath ="//select[@id='shipping_country']") public WebElement countryDdm;
+    @FindBy(xpath ="//input[@id='shipping_address_1']") public WebElement numStreet;
+    @FindBy(xpath = "//select[@id='shipping_state']") public WebElement province;
+    @FindBy(xpath ="//input[@id='shipping_postcode']") public WebElement postcode;
+    @FindBy(xpath ="//input[@id='shipping_city']") public WebElement townCity;
+    @FindBy(xpath ="//button[@name='save_address']") public WebElement saveAddress;
+    @FindBy(xpath ="(//a[@class='edit btn btn-link btn-primary btn-underline mb-4'])[2]") public WebElement editAddress;
+    @FindBy(xpath = "//*[text()='Store Manager']") public WebElement storeManagerButton;
+    @FindBy(xpath = "//select[@id='product_type']") public WebElement ProductType;
+    @FindBy(xpath = "(//span[@class='text'])[4]") public WebElement productsButonu;
+    @FindBy(xpath = "//*[text()='Add New']") public WebElement addNewButonu;
+    @FindBy(xpath = "//input[@id='pro_title']") public WebElement productTitleBox;
+    @FindBy(xpath = "(//body[@id='tinymce'])[1]") public WebElement shortDescriptionBox;
+    @FindBy(xpath = "(//body[@id='tinymce'])[1]") public WebElement descriptionBox;
+    @FindBy(xpath = "//iframe[@id='description_ifr']") public WebElement iframe;
+    @FindBy(xpath = "//iframe[@id='excerpt_ifr']") public WebElement shortDecrIframe;
+    @FindBy(xpath = "//input[@value='645']") public WebElement aaaTikla;
+    @FindBy(xpath = "(//p[@class='description wcfm_full_ele wcfm_side_add_new_category wcfm_add_new_category wcfm_add_new_taxonomy'])[1]") public WebElement addNewCategoryButonu;
+    @FindBy(xpath = "//input[@id='wcfm_new_cat']") public WebElement categoryNameKutusu;
+    @FindBy(xpath = "//button[@class='button wcfm_add_category_bt wcfm_add_taxonomy_bt']") public WebElement addButonu1;
+    @FindBy(xpath = "//p[text()='+Add new Product brands']") public WebElement addNewProductBrandsbutonu;
+    @FindBy(xpath = "//*[@id='wcfm_new_product_brand']") public WebElement brandNameKutusu;
+    @FindBy(xpath = "//input[@value='837']") public WebElement baslikTikla;
+    @FindBy(xpath = "(//button[text()='Add'])[2]") public WebElement addButonu2;
+    @FindBy(xpath = "//input[@id='wcfm_products_simple_submit_button']") public WebElement submitButonu;
+    @FindBy(xpath = "//img[@id='featured_img_display']") public WebElement buyukResim;
+    @FindBy(xpath = "//button[@id='menu-item-upload']") public WebElement uploadFile;
+    @FindBy(xpath = "//img[@id='gallery_img_gimage_0_display']") public WebElement kucukResim;
+    @FindBy(xpath = "//button[@class='browser button button-hero']") public WebElement selectFilesButonu;
+    @FindBy(xpath = "(//button[text()='Add'])[2]") public WebElement selectButonu1;
+    @FindBy(xpath = "//button[text()='Load more']") public WebElement loadMore;
+    @FindBy(xpath = "//button[text()='Select']") public  WebElement selectBuyukResim;
+    @FindBy(xpath = "//*[@id='__attachments-view-138']/li[3]/div") public  WebElement kucukResimSec;
+    @FindBy(xpath = "(//button[text()='Add to Gallery'])[2]") public WebElement addGalery2;
+    @FindBy(xpath ="(//*[text()='Categories'])[1]") public WebElement kucukResimScroll;
 
 
 
