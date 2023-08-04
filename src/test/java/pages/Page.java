@@ -276,7 +276,7 @@ public class Page {
     public WebElement dashboard;
     @FindBy(xpath = "(//*[@class='submit-status'])[1]")
     public WebElement invalidMailError;
-    @FindBy(linkText = "Addresses")git remote add https://github.com/ufuk-muhsiroglu/Team__14.git
+    @FindBy(linkText = "Addresses")
     public WebElement addressesButton;
     @FindBy(xpath = "//a[contains(@class,'edit btn')]")
     public WebElement billingAdd;
@@ -362,71 +362,98 @@ public class Page {
 
 
     //Rümeysa Olgun 364-414 arası
-    @FindBy(xpath="//a[@class='logo']") public WebElement AlloverLogo;
-    @FindBy(xpath = "//div[@class='account']//a[contains(.,'Register')]")  public WebElement Register;
-    @FindBy(xpath = "//div[@class='wcfmmp_become_vendor_link']")  public WebElement BecameVendor;
-    @FindBy(xpath = "//div[@class='page-title-wrap']//h2[contains(.,'Vendor Registration')]")  public WebElement VisibleRegistration;
-    @FindBy(xpath ="//input[@id='user_email']" )  public WebElement Email;
-    @FindBy(name="wcfm_email_verified_input")    public WebElement VerificationCode;
-    @FindBy(name="wcfm_email_verified_button")    public WebElement ReSendCode;
-    @FindBy(xpath = "//input[@id='passoword']")    public WebElement Password;
-    @FindBy(xpath = "//input[@id='confirm_pwd']")    public WebElement ConfirmPassword;
-    @FindBy(id="wcfm_membership_register_button")    public WebElement RegisterButton;
-    @FindBy(xpath = "//h1[contains(.,'Welcome to Allover Commerce!')]")    public WebElement VisibleWelcometoAllover;
-    @FindBy(xpath = "//a[@class='button button-large']")    public WebElement NotRightNow;
-    @FindBy(xpath = "//h2[contains(.,'Store Manager')]")    public WebElement StoreManager;
-    @FindBy(xpath = "//div[@id='wcfm_menu']//span[contains(.,'Products')]")    public WebElement products;
-    @FindBy(xpath = "//span[contains(text(),'Add New')]")    public WebElement AddNew;
-    // String sTop_SayfaAltLit_Menu="//div[@class='page_collapsible_content_holder'][contains(.,'%s')]";
-    //String Top_SayfaAltList_MenuVisible="//div[@class='wcfm-content']//strong[contains(.,'%s')]";
-    @FindBy(id="pro_title")    public WebElement ProductTitle;
-    @FindBy(id = "featured_img_display")    public WebElement PictureAdd;
-    @FindBy(id = "gallery_img_gimage_0_display")    public WebElement GaleriImgpictureAdd;
-    @FindBy(xpath = "(//button[contains(@type,'button')])[75]")    public WebElement MediaLibary;
-    @FindBy(xpath = "(//button[contains(.,'Select')])[6]")    public WebElement Select;
-    @FindBy(xpath = "//input[contains(@value,'549')]")    public WebElement Categories;
-    @FindBy(xpath = "//input[@id='sku']")    public WebElement Sku;
-    @FindBy(xpath = "//input[@id='manage_stock']")    public WebElement ManageStock;
-    @FindBy(xpath = "//input[@id='stock_qty']")    public WebElement StockQty;
-    @FindBy(xpath = "//input[@id='sold_individually']")    public WebElement SoldIndividually;
-    @FindBy(xpath = "//input[@id='wcfm_products_simple_submit_button']")    public WebElement SubmitButton;
+    @FindBy(xpath = "(//input[@type='password'])[1]")
+    public WebElement password;
+    @FindBy(xpath = "//*[@href='https://allovercommerce.com/store-manager/products-manage/']")
+    public WebElement productsAddNew;
+    @FindBy(xpath = "(//*[@class='wcfm_menu_item '])[3]")
+    public WebElement products;
+    @FindBy(xpath = "(//*[@class='text'])[4]")
+    public WebElement products1;
+    @FindBy(xpath = "//*[@id='catalog_visibility']")
+    public WebElement sku;
+    @FindBy(xpath = "(//*[@class='page_collapsible_content_holder'])[1]")
+    public WebElement inventory;
+    @FindBy(xpath = "(//*[@class='page_collapsible_content_holder'])[4]")
+    public WebElement shipping;
+    @FindBy(xpath = "(//*[@class='page_collapsible_content_holder'])[5]")
+    public WebElement attributes;
+    @FindBy(xpath = "(//*[@class='page_collapsible_content_holder'])[7]")
+    public WebElement linked;
+    @FindBy(xpath = "(//*[@class='page_collapsible_content_holder'])[8]")
+    public WebElement seo;
+    @FindBy(xpath = "(//*[@class='page_collapsible_content_holder'])[10]")
+    public WebElement advanced;
+    @FindBy(xpath = "//*[@id='sku']")
+    public WebElement skuBox;
+    @FindBy(xpath = "//input[@id='manage_stock']")
+    public WebElement manageStock;
+    @FindBy(xpath = "//input[@id='stock_qty']")
+    public WebElement stockQty;
+    @FindBy(xpath = "//input[@id='sold_individually']")
+    public WebElement soldIndividually;
+    @FindBy(xpath = "//*[@id='weight']")
+    public WebElement weight;
+    @FindBy(xpath = "//*[@id='length']")
+    public WebElement lenght;
+    @FindBy(xpath = "//*[@id='width']")
+    public WebElement widht;
+    @FindBy(xpath = "//*[@id='height']")
+    public WebElement height;
+    @FindBy(xpath = "//*[@id='backorders']")
+    public WebElement backordersBox;
+    @FindBy(xpath = "//*[@id='product_type']")
+    public WebElement simpleProductBox;
+    @FindBy(xpath = "//*[@id='is_virtual']")
+    public WebElement virtualBox;
+    @FindBy(xpath = "//*[@id='is_downloadable']")
+    public WebElement downloadableBox;
+    @FindBy(xpath = "//*[@id='pro_title']")
+    public WebElement productTitle;
+    @FindBy(xpath = "//*[@id='regular_price']")
+    public WebElement priceBox;
+    @FindBy(xpath = "//*[@id='sale_price']")
+    public WebElement salePriceBox;
+    @FindBy(xpath = "//*[@id='_wcfmmp_processing_time']")
+    public WebElement processing;
+    @FindBy(xpath = "//*[@id='attributes_is_active_1']")
+    public WebElement attributesColor;
+    @FindBy(xpath = "(//*[@class='select2-selection__rendered'])[2]")
+    public WebElement colorbox;
+    @FindBy(xpath = "//*[@id='attributes_is_active_2']")
+    public WebElement size;
+    @FindBy(xpath = "(//*[@class='select2-selection__rendered'])[3]")
+    public WebElement sizeBox;
+    @FindBy(xpath = "(//*[@class='wcfmfa fa-eye text_tip'])[3]")
+    public WebElement viewButton;
+    @FindBy(xpath = "//*[@id='wcfm_products_simple_draft_button']")
+    public WebElement draftButton;
+    @FindBy(xpath = "//*[@id='wcfm_products_manage_form']")
+    public WebElement inventoryMenu;
+    @FindBy(xpath = "//*[@class='summary entry-summary']")
+    public WebElement productDetails;
+    @FindBy(xpath = "//*[@href='#tab-additional_information']")
+    public WebElement specificationButton;
+    @FindBy(xpath = "//*[@class='woocommerce-tabs wc-tabs-wrapper tab tab-nav-simple']")
+    public WebElement specificationDetails;
+    @FindBy(xpath = "(//*[@class='wcfm_title wcfm_full_ele'])[1]")
+    public WebElement categoriesBox;
+    @FindBy(xpath = "(//*[@name='product_cats[]'])[1]")
+    public WebElement categoriesFirstBox;
+    @FindBy(xpath = "//*[@id='wcfm-products_wrapper']")
+    public WebElement productDetails1;
 
-    @FindBy(xpath = "//div[contains(@id,'wcfm_products_manage_form_inventory_head')]")    public WebElement inventory;
-    @FindBy(xpath = "//div[@id='wcfm_products_manage_form_shipping_head']")    public WebElement shipping;
-    @FindBy(xpath = "//div[@class='page_collapsible_content_holder'][contains(.,'Attributes')]")    public WebElement attributes;
-    @FindBy(xpath = "//div[@class='page_collapsible_content_holder'][contains(.,'Linked')]")    public WebElement linked;
-    @FindBy(xpath = "//div[@class='page_collapsible_content_holder'][contains(.,'SEO')]")    public WebElement seo;
-    @FindBy(xpath = "//div[@class='page_collapsible_content_holder'][contains(.,'Advanced')]")    public WebElement advanced;
-    @FindBy(xpath = "//*[@id='__wp-uploader-id-7']")    public WebElement selectFilesbutton;
-    @FindBy(xpath = "(//input[@name='product_cats[]'])[22]")    public WebElement bags;
-    @FindBy(xpath = "//*[@id='sku']")    public WebElement sku;
-    @FindBy(xpath = "//*[@id='manage_stock']")    public WebElement managestockbutton;
-    @FindBy(xpath = "//*[@id='stock_qty']")    public WebElement stockQty;
-    @FindBy(xpath = "//*[@id='sold_individually']")    public WebElement soldIndividuallybutton;
-    @FindBy(xpath = "//*[@id='wcfm_products_simple_submit_button']")    public WebElement submitButton;
-    @FindBy(xpath = "(//*[@value='yes'])[2]")    public WebElement allowBackordersAllow;
-    @FindBy(xpath = "//*[@id='gallery_img_gimage_0_display']")    public WebElement pictureAdd2;
-    @FindBy(xpath = "(//*[@class='thumbnail'])[7]")    public WebElement librarypicture;
+    @FindBy(css = "[id=username]")
+    public WebElement signInUserNameOrEmaill;
+    @FindBy(css = "[id=password]")
+    public WebElement signInPassword;
+    @FindBy(xpath = "(//*[@href='https://allovercommerce.com/my-account-2/'])[1]")
+    public WebElement myAccount;
+    @FindBy(xpath = "(//*[@href='https://allovercommerce.com/store-manager/'])")
+    public WebElement storeManager1;
 
-    @FindBy(xpath = "(//*[@id='menu-item-upload'])[2]")    public WebElement addToGalleryButton;
-    @FindBy(xpath = "//a[@class='wcfm_product_title']")    public WebElement urun1;
-    @FindBy(xpath = "//*[@class='login logout inline-type']")    public WebElement out;
-      @FindBy(xpath = "//*[@class='page-title']")    public WebElement myAccountYazisi;
-    @FindBy(xpath = "//*[@id='pro_title']")    public WebElement productTitle;
-    @FindBy(xpath = "//*[@id='featured_img_display']")    public WebElement resimEkle;
-    @FindBy(xpath = "(//*[@class='thumbnail'])[6]")    public WebElement ayakkabiResmi;
-    @FindBy(xpath = "//*[@id='insert-media-button']")    public WebElement selectButonu;
-    @FindBy(xpath = "//*[text()='Ayakkabı']")    public WebElement katagoriAyakkabi;
-    @FindBy(xpath = "//*[@id='stock_status']")    public WebElement stockStatus;
-    @FindBy(xpath = "//*[@class='attachment-thumbnail size-thumbnail']")    public WebElement productAyakkabiResmi;
-    @FindBy(xpath = "//*[@class='instock']")    public WebElement productStokDurumu;
-    @FindBy(xpath = "//div[@class='wcfm-tabWrap']")    public WebElement scroll7Things;
-    @FindBy(xpath = "//input[@id='weight']")    public WebElement shippingWeight;
-    @FindBy(xpath = "//input[@id='length']")    public WebElement shippingdimensionsLength;
-    @FindBy(xpath = "//input[@id='width']")    public WebElement shippingdimensionswidth;
-    @FindBy(xpath = "//input[@id='height']")    public WebElement shippingdimensionsHeight;
-    @FindBy(xpath = "//select[@id='shipping_class']")    public WebElement ddmShippingShippingClass;
-    @FindBy(xpath = "//select[@id='_wcfmmp_processing_time']")    public WebElement ddmShippingProcessingTime;
+
+
 
 
 
