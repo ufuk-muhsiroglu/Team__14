@@ -1,5 +1,6 @@
 package tests.US003;
 
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -11,33 +12,30 @@ import utilities.Driver;
 import utilities.ExtentReport;
 import utilities.ReusableMethods;
 
+public class TC03 extends ExtentReport {
 
-
-public class TC01 extends ExtentReport {
-
-
-//  Ana sayfaya git
-//  Sign In butonuna tıkla
-//  Username ve password girip giriş yap
-//  "My Account" buttonunu tıkla
-//  "Addresses" seçeneğini seç
-//  "Billing Adresses" bölümünün altındaki "ADD" butonunu tıkla
-//  "Billing Adresses" kısmına "First Name"in otomatik geldiğini doğrula
-//  "Billing Adresses" kısmına "Last Name"in otomatik geldiğini doğrula
-//  "Billing Adresses" kısmından "Country"seç
-//  "Billing Adresses" kısmına "Street address"gir
-//  "Billing Adresses" kısmına "Town / City"gir
-//  "Billing Adresses" kısmına "State"gir
-//  "Billing Adresses" kısmına "Zip Code"gir
-//  "Billing Adresses" kısmına "Phone"gir
-//  Kayıtlı e-posta adresini otomatik olarak görüntüle
-//  Fatura Adresini kaydetmek için "Save Address" düğmesine tıkla
-//  Fatura Adresinin başarıyla kaydedildiğini doğrula
+//    Ana sayfaya git
+//    Sign In butonuna tıkla
+//    Username ve password girip giriş yap
+//    "My Account" buttonunu tıkla
+//    "Addresses" seçeneğini seç
+//    "Billing Adresses" bölümünün altındaki "ADD" butonunu tıkla
+//    "Billing Adresses" kısmına "First Name"in otomatik geldiğini doğrula
+//    "Billing Adresses" kısmına "Last Name"in otomatik geldiğini doğrula
+//    "Billing Adresses" kısmından "Country"seç
+//    "Billing Adresses" kısmına "Street address"gir
+//    "Billing Adresses" kısmına "Town / City"gir
+//    "Billing Adresses" kısmına "State"gir
+//    "Billing Adresses" kısmına "Zip Code"gir
+//    "Billing Adresses","Phone" kısmını boş bırak veya rakam dışında veri gir
+//    Kayıtlı e-posta adresini otomatik olarak görüntüle
+//    "Billing Adress"i kaydetmek için "Save Address" düğmesine tıkla
+//    Geçerli "Phone" bilgisi girilmeden "Billing Adress" kaydedilmeyeceğini doğrula
 
 
     @Test
     public void testName() {
-        extentTest = extentReports.createTest("Add Billing Address 01", "Test Raporu");
+        extentTest = extentReports.createTest("Add Shipping Address 03", "Test Raporu");
 
 
 //    go to the website
@@ -60,19 +58,18 @@ public class TC01 extends ExtentReport {
         ReusableMethods.click(sourcePage.myAccountButton);
         extentTest.info("My account a tiklandi. ");
 
-//    Make sure that user see the "Addresses" and Click the "Addresses" button
+//    Make sure that user see the "Addresses" and Click the "Addresses
 
         Assert.assertTrue(sourcePage.addressesButton.isDisplayed());
-        ReusableMethods.bekle(2);
         sourcePage.addressesButton.click();
-        extentTest.info("Address butonu goruldu ve tiklandi. ");
+        extentTest.info("My account a tiklandi. ");
+        extentTest.info("Adres butonu goruldugu dogrulandi ve tiklandi. ");
 
-//    Make sure you have an "ADD->" button under Billing Address and Click the "ADD->" button
+//    Make sure you have an "ADD->" button under Billing Address
 
         Assert.assertTrue(sourcePage.billingAddButton.isDisplayed());
         sourcePage.billingAddButton.click();
         extentTest.info("Billing Add butonu goruldugu dogrulandi ve tiklandi. ");
-
 
 //    Make sure that user can see the "Billing address" writing on the page
 
@@ -95,16 +92,23 @@ public class TC01 extends ExtentReport {
 //    enter your street address on "Street address " section
 //    enter your town  on "Town/City" section
 //    enter your Zip Code on "Postcode/Zip*" section
-//    enter your Phone number  on "Phone" section
-        sourcePage.billingStreet.sendKeys("fgdshjsdk", Keys.TAB, Keys.TAB, "gfdkkj",
-                Keys.TAB, Keys.TAB+ "1234", Keys.TAB, "123456789");
-        extentTest.info("Street address, Town, Postcode ve Phone bilgileri girildi.");
 
-//    Select your contry/region on "Country/Region " selection
+        sourcePage.billingStreet.sendKeys("fgdshjsdk", Keys.TAB, Keys.TAB, "gfdkkj",
+                Keys.TAB, Keys.TAB+ "1234");
+        ReusableMethods.bekle(2);
+        extentTest.info("Street address, Town, Postcode bilgileri girildi.");
+
+//    enter letter on "Phone" section instead of numbers
+
+        sourcePage.billingPhone.sendKeys("mng");
+        ReusableMethods.bekle(2);
+        extentTest.info("Phone number kismina harf girildi. ");
+
+//    Select your contry/region on "Country/Region" selection
         WebElement countrySelect = sourcePage.billingCountrySelect;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Australia");
-        extentTest.info("Country Australia olarak secildi. ");
+        extentTest.info("Country secildi. ");
 
 //    select your State on "State" section
 
@@ -119,7 +123,7 @@ public class TC01 extends ExtentReport {
 
         String ddm = ReusableMethods.getValueByJSR("billing_email","value");
         Assert.assertEquals(ConfigReader.getProperty("alloverUserName"),ddm);
-        extentTest.info("Email addresin otomatik geldigi dogrulandi. ");
+        extentTest.info("Email adresinin otomatik geldigi dogrulandi. ");
 
 
 //    Click the "SAVE ADDRESS" button
@@ -128,13 +132,11 @@ public class TC01 extends ExtentReport {
         ReusableMethods.bekle(2);
         extentTest.info("Save address butonuna tiklandi. ");
 
+//    Make sure that user can see the "Mistake Reports" after click the save address button
 
-//    Make sure that user can see the "Address changed successfully." after click the save address button
+        Assert.assertTrue(sourcePage.billingPhoneInValidAllert.isDisplayed());
 
-        ReusableMethods.visibleWait(sourcePage.billingAllert, 10);
-        Assert.assertTrue(sourcePage.billingAllert.getText().contains("Address changed successfully."));
-        extentTest.info("Billing address basariyla kaydedildigi dogrulandi.");
-        ReusableMethods.tumSayfaResmi("03","Billing Adress eklendi");
+        ReusableMethods.tumSayfaResmi("03","Phone seçeneğine rakam degil harf girildigi icin invalid uyarisi alindi. ");
 
 
     }
