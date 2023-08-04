@@ -262,48 +262,48 @@ public class Page {
 
 
     // Ahmet Bedir 264-314 arası
-    @FindBy(xpath = "//*[@class='login inline-type']")
-    public WebElement homePageSignIn;
-    @FindBy(xpath = "(//input)[1]")
-    public WebElement signUsername;
-    @FindBy(xpath = "(//input)[2]")
-    public WebElement signPassword;
-    @FindBy(xpath = "(//button)[1]")
-    public WebElement signInButton;
-    @FindBy(xpath = "//*[@class='login logout inline-type']")
-    public WebElement signOutButton;
-    @FindBy(xpath = "(//ul)[3]")
-    public WebElement dashboard;
-    @FindBy(xpath = "(//*[@class='submit-status'])[1]")
-    public WebElement invalidMailError;
-    @FindBy(linkText = "Addresses")
-    public WebElement addressesButton;
-    @FindBy(xpath = "//a[contains(@class,'edit btn')]")
-    public WebElement billingAdd;
-    @FindBy(xpath = "//*[@id='billing_first_name']")
-    public WebElement billingName;
-    @FindBy(xpath = "//*[@id='billing_country']")
-    public WebElement billingCountry;
-    @FindBy (id = "billing_address_1")
-    public WebElement billingStreet;
-    @FindBy(xpath = "//input[@name='billing_postcode']")
-    public WebElement billingZIP;
-    @FindBy(id = "billing_state")
-    public WebElement billingState;
-    @FindBy(xpath = "//*[@id='billing_city']")
-    public WebElement billingTown;
-    @FindBy(xpath = "//*[@type='tel']")
-    public WebElement billingPhone;
-    @FindBy(id = "billing_email")
-    public WebElement billingEmail;
-    @FindBy(xpath = "//button[@value='Save address']")
-    public WebElement saveBillingAddress;
-    @FindBy(xpath = "//div[@class='woocommerce-Address']//a")
-    public WebElement checkAddAddress;
-    @FindBy(xpath = "(//*[@type='text'])[2]")
-    public WebElement billingLastname;
-    @FindBy(xpath = "//*[@role='alert']")
-    public WebElement alertBillingAddress;
+    @FindBy(xpath = "//*[@class='login inline-type']")  public WebElement homePageSignIn;
+    @FindBy(xpath = "(//input)[1]")   public WebElement signUsername;
+    @FindBy(xpath = "(//input)[2]")   public WebElement signPassword;
+    @FindBy(xpath = "(//button)[1]")  public WebElement signInButton;
+    @FindBy(xpath = "//*[@class='login logout inline-type']")  public WebElement signOutButton;
+    @FindBy(xpath = "//a[@href='https://allovercommerce.com/my-account-2/']")  public WebElement myAccountButtonUS11;
+    @FindBy(xpath = "//h2[text()='My Account']") public WebElement myAccountCheck;
+    @FindBy(xpath = "//nav[contains(@class,'woocommerce-MyAccount-navigation col-md-3')]")  public WebElement dashboard;
+    @FindBy(linkText = "Store Manager")  public WebElement storeMangerUS11;
+    @FindBy(xpath = "//h2[text()='Store Manager']") public WebElement storeManagerUS11Check;
+    @FindBy(xpath = "//h2[text()='Wishlist']") public WebElement wishlistUS11Check;
+    @FindBy(xpath = "(//li[@class='delimiter']/following-sibling::li)[3]") public WebElement checkButtons;
+    @FindBy(linkText = "Orders")  public WebElement ordersUS11;
+    @FindBy(linkText = "Downloads")  public WebElement downloadsUS11;
+    @FindBy(linkText = "Account details")  public WebElement accountDetailsUS11;
+    @FindBy(xpath = "(//a[@href='https://allovercommerce.com/wishlist/'])[2]")  public WebElement wishlistUS11;
+    @FindBy(linkText = "Support Tickets")  public WebElement supportTicketsUS11;
+    @FindBy(xpath = "(//span[@class='nobr'])[2]") public WebElement supportTicketsUS11Check;
+    @FindBy(linkText = "Followings")  public WebElement followingsUS11;
+    @FindBy(xpath = "//td[@colspan='2']") public WebElement followingsUS11Check;
+    @FindBy(linkText = "Logout")  public WebElement logoutUS11;
+    @FindBy(xpath = "(//*[@class='submit-status'])[1]")  public WebElement invalidMailError;
+
+    @FindBy(linkText = "Addresses")  public WebElement addressesButton;
+    @FindBy(xpath = "//a[contains(@class,'edit btn')]")  public WebElement billingAdd;
+    @FindBy(xpath = "//*[@id='billing_first_name']")  public WebElement billingName;
+    @FindBy(xpath = "//p[@data-priority='10']") public WebElement billingNameArea;
+    @FindBy(xpath = "//p[@data-priority='20']") public WebElement billingSurnameArea;
+    @FindBy(xpath = "//*[@id='billing_country']")  public WebElement billingCountry;
+    @FindBy (id = "billing_address_1")  public WebElement billingStreet;
+    @FindBy(xpath = "//input[@name='billing_postcode']")  public WebElement billingZIP;
+    @FindBy(id = "billing_state")  public WebElement billingState;
+    @FindBy(xpath = "//*[@id='billing_city']")  public WebElement billingTown;
+    @FindBy(xpath = "//*[@type='tel']")  public WebElement billingPhone;
+    @FindBy(id = "billing_email")  public WebElement billingEmail;
+    @FindBy(xpath = "//button[@value='Save address']")  public WebElement saveBillingAddress;
+    @FindBy(xpath = "//*[@role='alert']")  public WebElement checkAddAddress;
+    @FindBy(xpath = "(//*[@type='text'])[2]")  public WebElement billingLastname;
+    @FindBy(xpath = "//*[@role='alert']")  public WebElement alertBillingAddress;
+
+
+
 
 
 
