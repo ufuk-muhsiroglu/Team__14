@@ -34,12 +34,13 @@ public class TC_01_AddBillingAddress extends ExtentReport {
         extentTest.info("Clicked add billing button");
 
         //Are the Name, Surname and Email fields filled in automatically?
-        softAssert.assertFalse(page.billingName.getText().isEmpty());
-        ReusableMethods.webElementResmi(page.billingName);
-        extentTest.info("Checked the Vendor's Name automatically is not there");
-        softAssert.assertFalse(page.billingLastname.getText().isEmpty());
-        ReusableMethods.webElementResmi(page.billingLastname);
-        extentTest.info("Checked the Vendor's Last Name automatically is not there");
+        softAssert.assertTrue(page.billingName.getText().isEmpty());
+        extentTest.info("The Vendor's Name automatically is not there");
+        ReusableMethods.webElementResmi(page.billingNameArea);
+        softAssert.assertTrue(page.billingLastname.getText().isEmpty());
+        extentTest.info("The Vendor's Last Name automatically is not there");
+        ReusableMethods.bekle(1);
+        ReusableMethods.webElementResmi(page.billingSurnameArea);
         softAssert.assertEquals(page.billingEmail.getAttribute("value"),ConfigReader.getProperty("sabitEmail"));
         extentTest.info("Checked the Vendor's email automatically is there");
 

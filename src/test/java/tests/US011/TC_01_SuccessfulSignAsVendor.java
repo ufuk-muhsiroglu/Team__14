@@ -14,10 +14,8 @@ public class TC_01_SuccessfulSignAsVendor extends ExtentReport {
         extentTest = extentReports.createTest("US_11","Sign in as a Vendor");
         Page page =new Page();
         SoftAssert softAssert=new SoftAssert();
-        //go to home page
-        //click to sign in button
-        //Write User e-mail and password
-        //Click sign in button
+
+        //go to home page and sign in
         ReusableMethods.signInMethod(ConfigReader.getProperty("sabitEmail"),ConfigReader.getProperty("sabitPassword"));
         extentTest.info("The homepage is opened");
         extentTest.info("Signed in as a Vendor");
@@ -70,7 +68,7 @@ public class TC_01_SuccessfulSignAsVendor extends ExtentReport {
         extentTest.info("Addresses button is clickable");
 
         //Addreses sekmesine gecildigini dogrular
-        softAssert.assertEquals(page.checkButtons.getText(),"Addreses");
+        softAssert.assertEquals(page.checkButtons.getText(),"Addresses");
 
         //Account details'i tiklar
         page.accountDetailsUS11.click();
@@ -109,7 +107,6 @@ public class TC_01_SuccessfulSignAsVendor extends ExtentReport {
 
         //Log out sekmesine gecildigini dogrular
         softAssert.assertTrue(page.homePageSignIn.isDisplayed());
-        extentTest.info("Log out button is clickable");
 
         softAssert.assertAll();
     }

@@ -284,9 +284,12 @@ public class Page {
     @FindBy(xpath = "//td[@colspan='2']") public WebElement followingsUS11Check;
     @FindBy(linkText = "Logout")  public WebElement logoutUS11;
     @FindBy(xpath = "(//*[@class='submit-status'])[1]")  public WebElement invalidMailError;
+
     @FindBy(linkText = "Addresses")  public WebElement addressesButton;
     @FindBy(xpath = "//a[contains(@class,'edit btn')]")  public WebElement billingAdd;
     @FindBy(xpath = "//*[@id='billing_first_name']")  public WebElement billingName;
+    @FindBy(xpath = "//p[@data-priority='10']") public WebElement billingNameArea;
+    @FindBy(xpath = "//p[@data-priority='20']") public WebElement billingSurnameArea;
     @FindBy(xpath = "//*[@id='billing_country']")  public WebElement billingCountry;
     @FindBy (id = "billing_address_1")  public WebElement billingStreet;
     @FindBy(xpath = "//input[@name='billing_postcode']")  public WebElement billingZIP;
@@ -298,9 +301,6 @@ public class Page {
     @FindBy(xpath = "//*[@role='alert']")  public WebElement checkAddAddress;
     @FindBy(xpath = "(//*[@type='text'])[2]")  public WebElement billingLastname;
     @FindBy(xpath = "//*[@role='alert']")  public WebElement alertBillingAddress;
-
-
-
 
 
 

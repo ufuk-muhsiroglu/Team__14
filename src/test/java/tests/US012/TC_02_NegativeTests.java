@@ -232,6 +232,7 @@ public class TC_02_NegativeTests extends ExtentReport {
 
         //Check the alert message
         Assert.assertEquals(page.alertBillingAddress.getText(), "Street address is a required field.");
+        ReusableMethods.webElementResmi(page.alertBillingAddress);
         extentTest.info("Check the alert message is 'Street address is a required field.'");
     }
 
@@ -287,6 +288,7 @@ public class TC_02_NegativeTests extends ExtentReport {
 
         //Check the alert message
         Assert.assertEquals(page.alertBillingAddress.getText(), "Postcode / ZIP is a required field.");
+        ReusableMethods.webElementResmi(page.alertBillingAddress);
         extentTest.info("Check the alert message is 'Postcode / ZIP is a required field.'");
     }
 
@@ -342,6 +344,7 @@ public class TC_02_NegativeTests extends ExtentReport {
 
         //Check the alert message
         Assert.assertEquals(page.alertBillingAddress.getText(), "Town / City is a required field.");
+        ReusableMethods.webElementResmi(page.alertBillingAddress);
         extentTest.info("Check the alert message is 'Town / City is a required field.'");
     }
 
@@ -397,6 +400,7 @@ public class TC_02_NegativeTests extends ExtentReport {
 
         //Check the alert message
         Assert.assertEquals(page.alertBillingAddress.getText(), "Phone is a required field.");
+        ReusableMethods.webElementResmi(page.alertBillingAddress);
         extentTest.info("Check the alert message is 'Phone is a required field.'");
 
     }
