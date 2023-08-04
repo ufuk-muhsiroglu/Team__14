@@ -1,7 +1,6 @@
 package tests.US008;
 
 
-
 import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WindowType;
@@ -16,7 +15,7 @@ import utilities.TestBaseRapor;
 import static utilities.ExtentReport.extentTest;
 
 
-public class TC01 extends TestBaseRapor{
+public class TC02 extends TestBaseRapor{
 
     //    Ana sayfaya git.
 //    Register a tıkla
@@ -25,10 +24,8 @@ public class TC01 extends TestBaseRapor{
 //    Kucuk harf, büyük harf, rakam ve special karakter içeren Password gir
 //    "I agree to the privacy policy" tıklanmadan kayıt olunmamalı
 //    SIGN UP butonuna tıklayarak kayıt yapılmalı
-//    Arama butonundan ürün ara.
-//    Gelen ürünlerden herhangi birini seç.
-    // Sosyal medya ikonlarının yanında bulunan kalp ikonuna tıkla
-    // Arama butonunun yanında bulunan kalp ikonuna tıklayıp ürünün wishlist'e eklendiğini doğrula
+   // QUICK VIEW butonuna tıkla.
+   // Gelen pencerede ürün özelliklerini doğrula.
 
 
     @Test
@@ -62,19 +59,14 @@ public class TC01 extends TestBaseRapor{
         ReusableMethods.bekle(8);
         extentTest.info("SIGN UP butonuna tıklayarak kayıt yapildi");
 
-//        Arama butonundan ürün ara. "macbook"
-        page.searchBox.sendKeys("macbook",Keys.ENTER);
-        extentTest.info("Registera tiklandi");
+
+        // QUICK VIEW butonuna tıkla.
 
 
-//        Gelen ürünlerden herhangi birini seç.
-        ReusableMethods.bekle(2);
-        page.ilkUrun.click();
-        extentTest.info("Gelen ürünlerden herhangi biri secildi");
 
-        // Sosyal medya ikonlarının yanında bulunan kalp ikonuna tıkla
+        // Gelen pencerede ürün özelliklerini doğrula.
 
 
-        // Arama butonunun yanında bulunan kalp ikonuna tıklayıp ürünün wishlist'e eklendiğini doğrula
+
     }
 }

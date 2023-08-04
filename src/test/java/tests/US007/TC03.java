@@ -1,6 +1,4 @@
-package tests.US008;
-
-
+package tests.US007;
 
 import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.Keys;
@@ -16,7 +14,7 @@ import utilities.TestBaseRapor;
 import static utilities.ExtentReport.extentTest;
 
 
-public class TC01 extends TestBaseRapor{
+public class TC03 extends TestBaseRapor{
 
     //    Ana sayfaya git.
 //    Register a tıkla
@@ -27,9 +25,8 @@ public class TC01 extends TestBaseRapor{
 //    SIGN UP butonuna tıklayarak kayıt yapılmalı
 //    Arama butonundan ürün ara.
 //    Gelen ürünlerden herhangi birini seç.
-    // Sosyal medya ikonlarının yanında bulunan kalp ikonuna tıkla
-    // Arama butonunun yanında bulunan kalp ikonuna tıklayıp ürünün wishlist'e eklendiğini doğrula
-
+//    Compare Products alanında toplam 4 ürün seçili olduğunu değrula.
+//    Start Compare butonuna tıklayıp karşılaştırma yapıldığını doğrula.
 
     @Test
     public void testName() {
@@ -72,9 +69,5 @@ public class TC01 extends TestBaseRapor{
         page.ilkUrun.click();
         extentTest.info("Gelen ürünlerden herhangi biri secildi");
 
-        // Sosyal medya ikonlarının yanında bulunan kalp ikonuna tıkla
-
-
-        // Arama butonunun yanında bulunan kalp ikonuna tıklayıp ürünün wishlist'e eklendiğini doğrula
     }
 }

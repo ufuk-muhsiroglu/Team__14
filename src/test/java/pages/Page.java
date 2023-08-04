@@ -162,6 +162,20 @@ public class Page {
 
 
     // Gönül Obuz 164-214 arası
+    @FindBy(xpath= "//*[@class='register inline-type']")    public WebElement registerClick;
+    @FindBy(xpath= "(//*[@name='username'])[2]")    public WebElement userName1;
+    @FindBy(xpath= "(//*[@id='register-policy'])[1]")    public WebElement tickBox;
+    @FindBy(xpath= "//*[@class='login-popup']")    public WebElement tickBoxAlert;
+    @FindBy(xpath= "(//*[@value='Sign Up'])[1]")    public WebElement singUp;
+    @FindBy(xpath= "(//*[@placeholder='Search'])[1]")    public WebElement searchBox;
+    @FindBy(xpath= "(//*[@type='search'])[1]")    public WebElement searchBoxAgain;
+    @FindBy(xpath= "(//h3)[2]")    public WebElement ilkUrun;
+    @FindBy(xpath= "//*[text()='Start Compare !']")    public WebElement startCompareButton;
+    @FindBy(xpath= "//*[@class='product-title']")    public WebElement fotoIcinLocation;
+    @FindBy(xpath= "(//h3)[3]")    public WebElement ikinciUrun;
+    @FindBy(xpath= "(//*[@href='#'])[4]")    public WebElement scaleIkon;
+    @FindBy(xpath= "(//h3)[4]")
+    public WebElement ucuncuUrun;
 
 
 
@@ -415,7 +429,7 @@ public class Page {
     @FindBy(xpath ="(//i[@class='w-icon-account'])[1]") public WebElement signInY;
     @FindBy(xpath = "(//input[@name='username'])[1]") public WebElement usernameV;
     @FindBy(xpath = "//button[@name='login']") public WebElement login;
-    @FindBy(xpath = "(//input[@class='form-control'])[1]") public WebElement searchBox;
+    //@FindBy(xpath = "(//input[@class='form-control'])[1]") public WebElement searchBox;
     @FindBy(xpath = "(//figure[@class='product-media'])[1]") public WebElement secilecekUrun;
     @FindBy(xpath = "//button[@name='add-to-cart']") public WebElement addToCartButton;
     @FindBy(xpath = "(//i[@class='w-icon-cart'])[1]") public WebElement cartIcon;
