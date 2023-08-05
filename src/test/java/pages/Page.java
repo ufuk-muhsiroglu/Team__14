@@ -112,18 +112,18 @@ public class Page {
 
 
     // Mustafa Çelik 114-164 arası
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "(//img)[7]")
+    public WebElement resimSec;
+    @FindBy(xpath = "//*[@name='update_cart']")
+    public  WebElement updateCart;
+    @FindBy(xpath = "//*[@title='Minus']")
+    public WebElement minus;
+    @FindBy(xpath = "(//*[@type=\"radio\"])[2]")
+    public WebElement paymentMethods;
+    @FindBy(xpath = "(//*[@type=\"submit\"])[4]")
+    public  WebElement placEOrder;
+    @FindBy(xpath = "//*[text()='Thank you. Your order has been received.']")
+    public  WebElement thanks;
 
 
 
