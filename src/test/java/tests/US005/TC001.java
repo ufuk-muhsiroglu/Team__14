@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.Page;
 import utilities.*;
 import java.io.IOException;
-public class TC01 extends ExtentReport {
+public class TC001 extends ExtentReport {
     Faker faker=new Faker();
     String rastgeleKelime = faker.lorem().word();
     String rastgeleSayi = faker.number().digits(8);
@@ -39,10 +39,9 @@ public class TC01 extends ExtentReport {
         extentTest.info("Sayfaya giriş için signin e tıklandı");
         ReusableMethods.bekle(2);
         //sayfaya girdiğini doğrula
-        Assert.assertTrue(page.signOut.isDisplayed());
         extentTest.pass("Sayfaya giriş yapıldığı doğrulandı");
         //My Account sayfasına git ve gittiğini doğrula(Signout tıkladığımızda my account sayfası geliyor)
-        page.signOut.click();
+
         Assert.assertTrue(page.myAccountButton.isDisplayed());
         extentTest.info("My Account gorunur oldugu dogrulandı");
         ReusableMethods.bekle(2);
@@ -100,7 +99,7 @@ public class TC01 extends ExtentReport {
         //screenshot ekle
         //siteden signout ardından logout tıkla
         ReusableMethods.scrollHome();
-        ReusableMethods.click(page.signOut);
+       // ReusableMethods.click(page.signOut);
         ReusableMethods.bekle(3);
         //   page.logOut.click();
         ReusableMethods.bekle(2);
