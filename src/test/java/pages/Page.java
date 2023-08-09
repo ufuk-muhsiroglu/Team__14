@@ -13,11 +13,11 @@ import java.util.List;
 
 
 public class Page {
-    public Page(){
-        PageFactory.initElements(Driver.getDriver(),this);
-    
 
+    public Page() {
+        PageFactory.initElements(Driver.getDriver(), this);
 
+    }
 
 
 
@@ -316,7 +316,7 @@ public class Page {
     @FindBy(xpath = "(//input)[1]") public WebElement signInUsername;
     @FindBy(xpath = "(//input)[2]") public WebElement signInPassword;
     @FindBy(xpath = "(//button)[1]") public WebElement signInSubmit;
-    @FindBy(xpath = "//*[@class='login logout inline-type']") public WebElement signOutButonu;
+    @FindBy(xpath = "//*[@class='login logout inline-type']") public WebElement signOutAgain;
     //US14
     @FindBy(xpath = "//*[text()='Edit Your Shipping Address']") public WebElement editShipping;
     @FindBy(xpath = "//*[@id='main']/div/div/div/div/div/div/nav/ul/li[5]/a") public WebElement adresler;
@@ -403,7 +403,7 @@ public class Page {
     @FindBy(xpath = "(//*[@name='product_cats[]'])[1]")  public WebElement categoriesFirstBox;
     @FindBy(xpath = "//*[@id='wcfm-products_wrapper']")  public WebElement productDetails1;
     @FindBy(css = "[id=username]")  public WebElement signInUserNameOrEmaill;
-    @FindBy(css = "[id=password]")  public WebElement signInPassword;
+    @FindBy(css = "[id=password]")  public WebElement signInPassword1;
     @FindBy(xpath = "(//*[@href='https://allovercommerce.com/my-account-2/'])[1]")  public WebElement myAccount;
     @FindBy(xpath = "(//*[@href='https://allovercommerce.com/store-manager/'])")  public WebElement storeManager1;
 
@@ -505,255 +505,6 @@ public class Page {
     @FindBy(xpath = "//*[@href='/my-account-2/orders/']") public WebElement MyOrderClick;
     @FindBy(xpath = "//*[@class='woocommerce-button btn btn-default btn-rounded btn-outline btn-sm btn-block view']") public WebElement ViewClick;
     @FindBy(xpath = "//*[@class='woocommerce-order-details__title']") public WebElement OrderDetail;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
