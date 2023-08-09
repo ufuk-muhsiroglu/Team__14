@@ -13,12 +13,12 @@ import java.util.List;
 
 
 public class Page {
-    public Page() {
-        PageFactory.initElements(Driver.getDriver(), this);
+    public Page(){
+        PageFactory.initElements(Driver.getDriver(),this);}
+   
 
 
     }
-
 
 
     //Beyza Çolak 24-64 satır arası
@@ -112,18 +112,18 @@ public class Page {
     @FindBy(xpath= "//*[@data-id='shipping_postcode']") public WebElement shippingPostcodeAllert;
 
     // Mustafa Çelik 114-164 arası
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "(//img)[7]")
+    public WebElement resimSec;
+    @FindBy(xpath = "//*[@name='update_cart']")
+    public  WebElement updateCart;
+    @FindBy(xpath = "//*[@title='Minus']")
+    public WebElement minus;
+    @FindBy(xpath = "(//*[@type=\"radio\"])[2]")
+    public WebElement paymentMethods;
+    @FindBy(xpath = "(//*[@type=\"submit\"])[4]")
+    public  WebElement placEOrder;
+    @FindBy(xpath = "//*[text()='Thank you. Your order has been received.']")
+    public  WebElement thanks;
 
 
 
@@ -311,11 +311,7 @@ public class Page {
 
 
    
-   
-      
-      
-  
-    // Bergüzar Zeynep Ölmez 314-364 arası
+   // Bergüzar Zeynep Ölmez 314-364 arası
     // US13
     @FindBy(xpath = "(//input)[1]") public WebElement signInUsername;
     @FindBy(xpath = "(//input)[2]") public WebElement signinPassword;
@@ -407,7 +403,7 @@ public class Page {
     @FindBy(xpath = "(//*[@name='product_cats[]'])[1]")  public WebElement categoriesFirstBox;
     @FindBy(xpath = "//*[@id='wcfm-products_wrapper']")  public WebElement productDetails1;
     @FindBy(css = "[id=username]")  public WebElement signInUserNameOrEmaill;
-    //@FindBy(css = "[id=password]") public WebElement signInPassword;
+    @FindBy(css = "[id=password]")  public WebElement signInPassword1;
     @FindBy(xpath = "(//*[@href='https://allovercommerce.com/my-account-2/'])[1]")  public WebElement myAccount;
     @FindBy(xpath = "(//*[@href='https://allovercommerce.com/store-manager/'])")  public WebElement storeManager1;
 
