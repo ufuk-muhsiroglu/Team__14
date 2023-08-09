@@ -23,10 +23,10 @@ public class TC01_VendorAdresKaydi extends ExtentReport {
         Driver.getDriver().findElement(By.xpath("//span[text()='Sign In']")).click();
         ReusableMethods.bekle(2);
         page.signInUsername.sendKeys(ConfigReader.getProperty("sabitEmail"));
-        page.signInPassword.sendKeys(ConfigReader.getProperty("sabitPassword"));
+        page.signinPassword.sendKeys(ConfigReader.getProperty("sabitPassword"));
         page.signInSubmit.click();
       // extentTest.info("Siteye Vendor olarak giris yapildi");
-        page.signOutButton.click();
+        page.signOutAgain.click();
         page.adresler.click();
       //  extentTest.info("Addresses butonu tıklandı.");
         ReusableMethods.scroll(page.editShipping);
