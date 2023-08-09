@@ -14,15 +14,15 @@ import utilities.TestBaseRapor;
 
 public class TC02 extends TestBaseRapor{
 
-    //    Ana sayfaya git.
+//    Ana sayfaya git.
 //    Register a tıkla
 //    Username gir
 //    Geçerli e-mail adresi gir
 //    Kucuk harf, büyük harf, rakam ve special karakter içeren Password gir
 //    "I agree to the privacy policy" tıklanmadan kayıt olunmamalı
 //    SIGN UP butonuna tıklayarak kayıt yapılmalı
-   // QUICK VIEW butonuna tıkla.
-   // Gelen pencerede ürün özelliklerini doğrula.
+//    QUICK VIEW butonuna tıkla.
+//    Gelen pencerede ürün özelliklerini doğrula.
 
 
     @Test

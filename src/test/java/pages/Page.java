@@ -15,10 +15,10 @@ import java.util.List;
 public class Page {
     public Page(){
         PageFactory.initElements(Driver.getDriver(),this);}
-    
+   
 
 
-
+    }
 
 
     //Beyza Çolak 24-64 satır arası
@@ -63,8 +63,11 @@ public class Page {
   
    // Fatma Banu Güler 64-114 arası
 
-    @FindBy(xpath = "//*[text()='Sign In']") public WebElement signIn;
-    @FindBy(xpath = "//*[@id='username']") public WebElement userName;
+    @FindBy(xpath = "//*[text()='Sign In']")
+    public WebElement signIn;
+
+    @FindBy(xpath = "//*[@id='username']")
+    public WebElement userName;
     @FindBy(xpath = "//*[@id='menu-item-1079']") public WebElement myAccountButton;
     @FindBy(xpath = "//a[text()='Addresses']") public WebElement addressesButton1;
     @FindBy(xpath = "(//h3)[1]") public WebElement billingAddressWriting;
@@ -107,9 +110,6 @@ public class Page {
     @FindBy(xpath= "//*[@data-id='shipping_address_1']") public WebElement shippingAddressAllert;
     @FindBy(xpath= "//*[@data-id='shipping_city']") public WebElement shippingCityAdressAllert;
     @FindBy(xpath= "//*[@data-id='shipping_postcode']") public WebElement shippingPostcodeAllert;
-
-
-
 
     // Mustafa Çelik 114-164 arası
     @FindBy(xpath = "(//img)[7]")
@@ -181,7 +181,19 @@ public class Page {
     @FindBy(xpath = "//button[contains(@title,'Quick View')]") public WebElement quickView;
     @FindBy(xpath = "(//h2)[1]") public WebElement quickViewUrun;
     @FindBy(xpath = "//a[contains(@class,'compare-clean')]") public WebElement clearAll;
+    @FindBy(xpath = "(//*[@data-product-type='simple'])[1]") public WebElement firstWishUrun;
+    @FindBy(xpath = "(//*[@data-product-type='simple'])[2]") public WebElement secondWishUrun;
+    @FindBy(xpath = "//*[@class='w-icon-heart']") public WebElement wishListButton;
+    @FindBy(xpath = "//*[@id='payment_method_cod']") public WebElement payAtTheDoor;
+    @FindBy(xpath = "(//*[@type='submit'])[3]") public WebElement placeOrderButton;
+    @FindBy(xpath = "(//p)[3]") public WebElement thankYouYazisi;
     @FindBy(xpath = "//h2[@class='page-title'][contains(.,'Compare')]") public WebElement  comparekarsılastırma;
+    @FindBy(xpath= "//*[.='Wishlist']") public WebElement wishListDashboard;
+    @FindBy(xpath= "//*[@class='woocommerce-Button button']") public WebElement goShopButton;
+    @FindBy(xpath= "(//*[.='Add to cart'])[1]") public WebElement addToCart;
+    @FindBy(xpath= "(//*[@class='w-icon-cart'])[1]") public WebElement cartButton;
+    @FindBy(xpath= "//*[.='Checkout']") public WebElement checkoutButton;
+    @FindBy(xpath= "//*[@id='billing_first_name']") public WebElement checkoutFirstName;
 
 
 
@@ -202,15 +214,7 @@ public class Page {
       
       
       
-      
-      
-      
-      
-  
-  
-  
-  
-  
+
    // Ali İsaoğlu 214-264 arası
     @FindBy(xpath ="//span[text()='Register']")  public WebElement registerButonu;
     //Register'a tikladiktan sonra acilan ilk sayfadaki WebElementler
@@ -307,16 +311,12 @@ public class Page {
 
 
    
-   
-      
-      
-  
-    // Bergüzar Zeynep Ölmez 314-364 arası
+   // Bergüzar Zeynep Ölmez 314-364 arası
     // US13
     @FindBy(xpath = "(//input)[1]") public WebElement signInUsername;
-    @FindBy(xpath = "(//input)[2]") public WebElement signInPassword;
+    @FindBy(xpath = "(//input)[2]") public WebElement signinPassword;
     @FindBy(xpath = "(//button)[1]") public WebElement signInSubmit;
-    @FindBy(xpath = "//*[@class='login logout inline-type']") public WebElement signOutButon;
+    @FindBy(xpath = "//*[@class='login logout inline-type']") public WebElement signOutAgain;
     //US14
     @FindBy(xpath = "//*[text()='Edit Your Shipping Address']") public WebElement editShipping;
     @FindBy(xpath = "//*[@id='main']/div/div/div/div/div/div/nav/ul/li[5]/a") public WebElement adresler;
@@ -505,255 +505,6 @@ public class Page {
     @FindBy(xpath = "//*[@href='/my-account-2/orders/']") public WebElement MyOrderClick;
     @FindBy(xpath = "//*[@class='woocommerce-button btn btn-default btn-rounded btn-outline btn-sm btn-block view']") public WebElement ViewClick;
     @FindBy(xpath = "//*[@class='woocommerce-order-details__title']") public WebElement OrderDetail;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

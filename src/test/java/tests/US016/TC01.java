@@ -20,7 +20,7 @@ public class TC01 {
         ReusableMethods.bekle(2);
 
         page.signInUserNameOrEmaill.sendKeys(ConfigReader.getProperty("emailAddress"));
-        page.signInPassword.sendKeys(ConfigReader.getProperty("gecerliPassword"));
+        page.signinPassword.sendKeys(ConfigReader.getProperty("gecerliPassword"));
         page.signInButton.click();
         ReusableMethods.bekle(2);
 

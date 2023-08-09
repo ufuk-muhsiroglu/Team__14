@@ -46,14 +46,14 @@ public class TC03 extends TestBaseRapor{
 //        Username gir
 //        Geçerli e-mail adresi gir
 //        Kucuk harf, büyük harf, rakam ve special karakter içeren Password gir
-        page.userName1.sendKeys("Ayp", Keys.TAB, ConfigReader.getProperty("email1"),
+        page.userName1.sendKeys("Aydan", Keys.TAB, ConfigReader.getProperty("email1"),
                 Keys.TAB, ConfigReader.getProperty("password1"),Keys.ENTER);
         extentTest.info("Username, email address ve password girildi");
 
 //        "I agree to the privacy policy" tıklanmadan kayıt olunmadigini dogrula
         Assert.assertTrue(page.tickBoxAlert.isDisplayed());
         ReusableMethods.bekle(5);
-        extentTest.info("\"I agree to the privacy policy\" tıklanmadan kayıt olunmadigini dogrulandi");
+        extentTest.info("I agree to the privacy policy tıklanmadan kayıt olunmadigini dogrulandi");
 
 //        SIGN UP butonuna tıklayarak kayıt yap
         page.tickBox.click();
@@ -61,20 +61,29 @@ public class TC03 extends TestBaseRapor{
         ReusableMethods.bekle(8);
         extentTest.info("SIGN UP butonuna tıklayarak kayıt yapildi");
 
-       //  Wishlist deki beğenilen ürünün en sağ kısmındaki ADD TO CARD butonuna tıkla.
 
+//        Arama butonundan ürün ara. "macbook"
 
- //  Arama butonun sağ kısmında bulunan Cart butonuna tıkla.
+        page.searchBoxy.sendKeys("macbook",Keys.ENTER);
+        extentTest.info("Registera tiklandi");
 
+//        Wishlist deki beğenilen ürünün en sağ kısmındaki ADD TO CARD butonuna tıkla.
 
+        page.firstWishUrun.click();
+        page.secondWishUrun.click();
+        page.wishListButton.click();
+        page.addToCart.click();
 
-//      Açılan Pencerede CHECKOUT butonuna tıkla.
+//        Arama butonun sağ kısmında bulunan Cart butonuna tıkla.
 
+        page.cartButton.click();
 
+//        Açılan Pencerede CHECKOUT butonuna tıkla.
 
+        page.checkoutButton.click();
 
-        //FAtura bilgileri
-       //   check yor first name on "First name" section
+//        FAtura bilgileri
+//        check yor first name on "First name" section
 
         String ddmFirstName = ReusableMethods.getValueByJSR("billing_first_name","value");
         Assert.assertEquals(ConfigReader.getProperty("firstName"),ddmFirstName);
@@ -95,13 +104,13 @@ public class TC03 extends TestBaseRapor{
         extentTest.info("Street address, Town, Postcode ve Phone bilgileri girildi.");
         ReusableMethods.bekle(2);
 
-//    Select your contry/region on "Country/Region" selection
+//      Select your contry/region on "Country/Region" selection
         WebElement countrySelect = page.billingCountrySelect;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Australia");
         extentTest.info("Country secildi. ");
 
-//    select your State on "State" section
+//      select your State on "State" section
 
         WebElement stateSelect = page.billingStateSelect;
         Select select1 = new Select(stateSelect);
@@ -109,22 +118,14 @@ public class TC03 extends TestBaseRapor{
         ReusableMethods.bekle(2);
         extentTest.info("State secildi. ");
 
+//      Aynı sayfada PLACE ORDER butonuna tıkla.
 
-//   Make sure that the email address has no '@'
+        page.payAtTheDoor.click();
+        page.placeOrderButton.click();
 
-        ReusableMethods.sendKeysJS(page.billingEmail, ConfigReader.getProperty("wrongEmailAddress"));
-        ReusableMethods.bekle(2);
+//      Sayfada Thank you. Your order has been received. yazısının göründüğünü doğrula.
 
-//    Click the "SAVE ADDRESS" button
+        Assert.assertTrue(page.thankYouYazisi.isDisplayed());
 
-        page.billingSubmit.click();
-        ReusableMethods.bekle(2);
-        extentTest.info("Save address butonuna tiklandi. ");
-
-        //  Aynı sayfada PLACE ORDER butonuna tıkla.
-
-
-
-        //  Sayfada Thank you. Your order has been received. yazısının göründüğünü doğrula.
     }
 }

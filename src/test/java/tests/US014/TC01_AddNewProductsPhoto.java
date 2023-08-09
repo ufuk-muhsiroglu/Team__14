@@ -16,7 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import static utilities.Driver.driver;
+
 
 
 public class TC01_AddNewProductsPhoto extends ExtentReport {
@@ -32,12 +32,12 @@ public class TC01_AddNewProductsPhoto extends ExtentReport {
         ReusableMethods.bekle(2);
         //Sign in ol
         page.signInUsername.sendKeys(ConfigReader.getProperty("emailSabit"));
-        page.signInPassword.sendKeys(ConfigReader.getProperty("passwordSabit"));
+        page.signinPassword.sendKeys(ConfigReader.getProperty("passwordSabit"));
         page.signInSubmit.click();
         //  extentTest.info("Siteye Vendor olarak giris yapildi");
         //Sirasi ile StoreManager, Products, Add New butonuna tikla
         ReusableMethods.bekle(2);
-        page.signOutButonu.sendKeys(Keys.ENTER);
+        page.signOutAgain.sendKeys(Keys.ENTER);
         page.storeManagerButton.click();
         ReusableMethods.bekle(2);
         page.productsButonu.click();
@@ -67,21 +67,21 @@ public class TC01_AddNewProductsPhoto extends ExtentReport {
 
         //Simple Product, Variable Product, Grouped Product, External
         // - Affiliate Product seçenekleri gorunur oldugunu dogrula
-        List<WebElement> allOptions =    driver.findElements(By.xpath("//select[@id='product_type']"));
+        List<WebElement> allOptions =    Driver.getDriver().findElements(By.xpath("//select[@id='product_type']"));
         allOptions.stream().forEach(t-> System.out.println(t.getText()));
         //'Product Title' kutusuna ' topuklu ayakkabi' yaz
         ReusableMethods.scroll(page.productTitleBox);
         page.productTitleBox.sendKeys("Topuklu ayakkabi");
        ReusableMethods.bekle(2);
        //'Short Description' kutusuna "8 cm topuklu ayakkabi" yaz
-        driver.switchTo().frame(page.shortDecrIframe);
+        Driver.getDriver().switchTo().frame(page.shortDecrIframe);
        page.descriptionBox.sendKeys("8 cm topuklu ayakkabi", Keys.ENTER);
-        driver.switchTo().defaultContent();
+        Driver.getDriver().switchTo().defaultContent();
        // Description kisina aciklama yaz
-        driver.switchTo().frame(page.iframe);
+        Driver.getDriver().switchTo().frame(page.iframe);
         page.descriptionBox.sendKeys("Bu topuklu ayakkabı günlük, ofis, Düğün, Kına, Nişan," +
             " Mezuniyet ve özel günlerinizde kombinlerinizi tamamlayarak size şıklığı sunuyor.",Keys.ENTER);
-        driver.switchTo().parentFrame();
+        Driver.getDriver().switchTo().parentFrame();
         ReusableMethods.bekle(3);
         //aaa' secenegine tikla,Category name' bolumune 'High Heel Shoes' ekle
         page.aaaTikla.click();
