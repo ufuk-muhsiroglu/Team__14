@@ -318,9 +318,9 @@ public class Page {
     // Bergüzar Zeynep Ölmez 314-364 arası
     // US13
     @FindBy(xpath = "(//input)[1]") public WebElement signInUsername;
-    @FindBy(xpath = "(//input)[2]") public WebElement signInPassword;
+    @FindBy(xpath = "(//input)[2]") public WebElement signinPassword;
     @FindBy(xpath = "(//button)[1]") public WebElement signInSubmit;
-    //@FindBy(xpath = "//*[@class='login logout inline-type']") public WebElement signOutButonu;
+    @FindBy(xpath = "//*[@class='login logout inline-type']") public WebElement signOutAgain;
     //US14
     @FindBy(xpath = "//*[text()='Edit Your Shipping Address']") public WebElement editShipping;
     @FindBy(xpath = "//*[@id='main']/div/div/div/div/div/div/nav/ul/li[5]/a") public WebElement adresler;

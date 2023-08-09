@@ -32,12 +32,12 @@ public class TC01_AddNewProductsPhoto extends ExtentReport {
         ReusableMethods.bekle(2);
         //Sign in ol
         page.signInUsername.sendKeys(ConfigReader.getProperty("emailSabit"));
-        page.signInPassword.sendKeys(ConfigReader.getProperty("passwordSabit"));
+        page.signinPassword.sendKeys(ConfigReader.getProperty("passwordSabit"));
         page.signInSubmit.click();
         //  extentTest.info("Siteye Vendor olarak giris yapildi");
         //Sirasi ile StoreManager, Products, Add New butonuna tikla
         ReusableMethods.bekle(2);
-        page.signOutButonu.sendKeys(Keys.ENTER);
+        page.signOutAgain.sendKeys(Keys.ENTER);
         page.storeManagerButton.click();
         ReusableMethods.bekle(2);
         page.productsButonu.click();
