@@ -1,8 +1,8 @@
-package tests.US016;
+package tests.US15;
+
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Page;
 import utilities.ConfigReader;
@@ -39,40 +39,13 @@ public class TC01 {
         actions.moveToElement(page.products).perform();
         ReusableMethods.click(page.productsAddNew);
         ReusableMethods.bekle(3);
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
 
-        //Verify that Simple Product comes by default
-        Assert.assertTrue(page.simpleProductBox.isDisplayed());
+        //Verify the visibility of the menus
+        ReusableMethods.scroll(page.draftButton);
+        ReusableMethods.tumSayfaResmi("linked");
 
-        //Check the virtual box
-        ReusableMethods.click(page.virtualBox);
-
-        //Check the downloadable box
-        page.downloadableBox.click();
-
-        //Enter a title in the Product Title field
-        //Write Price and Sale Price
-        page.productTitle.sendKeys("phone",Keys.TAB,"10",Keys.TAB,"30");
-
-        //Select Categories
-        ReusableMethods.scroll(page.categoriesBox);
-        ReusableMethods.click(page.categoriesFirstBox);
-
-        //Click the Draft button
-        ReusableMethods.click(page.draftButton);
-        ReusableMethods.bekle(3);
-
-        //Click the Products button
-        ReusableMethods.click(page.products1);
-        ReusableMethods.bekle(3);
-
-        //Verify product visibility in Products
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.bekle(2);
-        ReusableMethods.tumSayfaResmi("name");
-        ReusableMethods.bekle(2);
-        Assert.assertTrue(page.productDetails1.isDisplayed());
 
 
     }
-
 }
