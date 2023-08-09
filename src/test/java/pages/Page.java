@@ -207,10 +207,10 @@ public class Page {
 
 
 
+      
+      
+      
 
-      
-      
-      
     // Ali İsaoğlu 214-264 arası
     @FindBy(xpath ="//span[text()='Register']")  public WebElement registerButonu;
     //Register'a tikladiktan sonra acilan ilk sayfadaki WebElementler
@@ -359,8 +359,8 @@ public class Page {
     @FindBy(xpath = "(//button[text()='Add to Gallery'])[2]") public WebElement addGalery2;
     @FindBy(xpath ="(//*[text()='Categories'])[1]") public WebElement kucukResimScroll;
 
-  
-  
+
+
     //Rümeysa Olgun 364-414 arası
     @FindBy(xpath = "(//input[@type='password'])[1]")  public WebElement password;
     @FindBy(xpath = "//*[@href='https://allovercommerce.com/store-manager/products-manage/']")  public WebElement productsAddNew;
