@@ -13,12 +13,12 @@ import java.util.List;
 
 
 public class Page {
-    public Page(){
-        PageFactory.initElements(Driver.getDriver(),this);}
-   
 
+    public Page() {
+        PageFactory.initElements(Driver.getDriver(), this);
 
     }
+
 
 
     //Beyza Çolak 24-64 satır arası
