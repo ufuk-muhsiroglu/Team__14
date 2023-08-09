@@ -13,13 +13,11 @@ import java.util.List;
 
 
 public class Page {
-    public Page(){
-        PageFactory.initElements(Driver.getDriver(),this);}
-   
 
+    public Page() {
+        PageFactory.initElements(Driver.getDriver(), this);
 
     }
-
 
     //Beyza Çolak 24-64 satır arası
     @FindBy(xpath = "//a[@class='register inline-type']")
@@ -110,6 +108,8 @@ public class Page {
     @FindBy(xpath= "//*[@data-id='shipping_address_1']") public WebElement shippingAddressAllert;
     @FindBy(xpath= "//*[@data-id='shipping_city']") public WebElement shippingCityAdressAllert;
     @FindBy(xpath= "//*[@data-id='shipping_postcode']") public WebElement shippingPostcodeAllert;
+
+
 
     // Mustafa Çelik 114-164 arası
     @FindBy(xpath = "(//img)[7]")
@@ -211,11 +211,7 @@ public class Page {
       
       
       
-      
-      
-      
-
-   // Ali İsaoğlu 214-264 arası
+    // Ali İsaoğlu 214-264 arası
     @FindBy(xpath ="//span[text()='Register']")  public WebElement registerButonu;
     //Register'a tikladiktan sonra acilan ilk sayfadaki WebElementler
     @FindBy(xpath="//input[@id='reg_username']") public WebElement firstUsernameBox;
@@ -311,7 +307,11 @@ public class Page {
 
 
    
-   // Bergüzar Zeynep Ölmez 314-364 arası
+
+
+
+
+    // Bergüzar Zeynep Ölmez 314-364 arası
     // US13
     @FindBy(xpath = "(//input)[1]") public WebElement signInUsername;
     @FindBy(xpath = "(//input)[2]") public WebElement signinPassword;
